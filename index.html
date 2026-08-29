@@ -4,6 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Avi Punjabi — Controls & Mechatronics Engineer</title>
+<meta name="description" content="Avi Punjabi is a Controls &amp; Mechatronics Engineer and MEng student at UC Berkeley, working on robot kinematics, sensor fusion, and hardware validation.">
+
+<!-- Social preview (Open Graph / Twitter card). Requires og-image.jpg at the site root — see upload instructions. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Avi Punjabi — Controls & Mechatronics Engineer">
+<meta property="og:description" content="Robot kinematics, sensor fusion, and hardware validation work — MEng student at UC Berkeley.">
+<meta property="og:image" content="og-image.jpg">
+<meta property="og:url" content="https://avipunjabi.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Avi Punjabi — Controls & Mechatronics Engineer">
+<meta name="twitter:description" content="Robot kinematics, sensor fusion, and hardware validation work — MEng student at UC Berkeley.">
+<meta name="twitter:image" content="og-image.jpg">
+
+<!-- Favicon placeholder — add favicon.png (512x512 recommended) at the site root. -->
+<link rel="icon" type="image/png" href="favicon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -49,18 +65,15 @@
     backdrop-filter: blur(6px);
     border-bottom:1px solid var(--border);
   }
-  nav.topbar .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:56px;
-  }
+  nav.topbar .wrap{ display:flex; align-items:center; justify-content:space-between; height:56px; }
   .brand{ font-family:var(--mono); font-size:13px; letter-spacing:0.02em; color:var(--text); font-weight:600; }
-  .navlinks{ display:flex; gap:24px; }
+  .navlinks{ display:flex; gap:20px; }
   .navlinks a{
     font-family:var(--mono); font-size:11.5px; letter-spacing:0.04em;
     color:var(--text-dim); text-transform:uppercase;
   }
   .navlinks a:hover{ color:var(--accent); text-decoration:none; }
-  @media (max-width:640px){ .navlinks{ display:none; } }
+  @media (max-width:700px){ .navlinks{ display:none; } }
 
   /* ---------- HERO ---------- */
   header.hero{ border-bottom:1px solid var(--border); padding:56px 0 44px; }
@@ -83,10 +96,11 @@
     font-family:var(--mono); font-size:12px; letter-spacing:0.02em;
     padding:10px 16px; border-radius:3px; border:1px solid var(--border-strong);
     transition:all .15s ease; display:inline-flex; align-items:center; gap:6px;
+    background:var(--bg-panel); cursor:pointer;
   }
   .btn-primary{ background:var(--accent); color:#fff; border-color:var(--accent); font-weight:500; }
   .btn-primary:hover{ background:#16304f; text-decoration:none; }
-  .btn-ghost{ color:var(--text); background:var(--bg-panel); }
+  .btn-ghost{ color:var(--text); }
   .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); text-decoration:none; }
 
   .badge{
@@ -119,8 +133,51 @@
   p.summary{ color:var(--text-dim); max-width:70ch; font-size:15px; }
   p.summary strong{ color:var(--text); font-weight:600; }
 
+  /* ---------- CAROUSEL ---------- */
+  .carousel{
+    position:relative; border-radius:4px 4px 0 0; overflow:hidden;
+    border-bottom:1px solid var(--border); background:var(--bg-subtle);
+  }
+  .carousel.carousel--lg{ aspect-ratio: 16 / 8; }
+  .carousel.carousel--sm{ aspect-ratio: 16 / 7; }
+  .carousel-track{ display:flex; height:100%; transition: transform .35s ease; }
+  .carousel-slide{ flex: 0 0 100%; height:100%; position:relative; }
+  .carousel-slide img{ width:100%; height:100%; object-fit:cover; display:none; }
+  .img-placeholder{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:8px; background:
+      repeating-linear-gradient(45deg, var(--bg-subtle), var(--bg-subtle) 10px, #eceef1 10px, #eceef1 20px);
+    border:1px dashed var(--border-strong);
+  }
+  .img-placeholder svg{ width:26px; height:26px; color:var(--text-faint); }
+  .img-placeholder .ph-label{ font-family:var(--mono); font-size:10.5px; color:var(--text-faint); text-align:center; }
+  .img-placeholder code{
+    display:inline-block; margin-top:2px; font-family:var(--mono); font-size:10.5px;
+    color:var(--accent-2); background:var(--bg-panel); border:1px solid var(--border);
+    padding:2px 6px; border-radius:3px;
+  }
+  .carousel-btn{
+    position:absolute; top:50%; transform:translateY(-50%); z-index:2;
+    width:28px; height:28px; border-radius:50%; border:1px solid var(--border-strong);
+    background:rgba(255,255,255,0.9); color:var(--text); font-size:15px; line-height:1;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+  }
+  .carousel-btn:hover{ background:#fff; border-color:var(--accent); color:var(--accent); }
+  .carousel-prev{ left:8px; }
+  .carousel-next{ right:8px; }
+  .carousel-dots{
+    position:absolute; bottom:8px; left:0; right:0; z-index:2;
+    display:flex; justify-content:center; gap:6px;
+  }
+  .carousel-dot{
+    width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.6);
+    border:1px solid rgba(28,35,48,0.25); cursor:pointer; padding:0;
+  }
+  .carousel-dot.is-active{ background:var(--accent); border-color:var(--accent); }
+
   /* ---------- PROJECT SPEC SHEETS ---------- */
-  .spec{ border:1px solid var(--border); background:var(--bg-panel); padding:22px 24px; margin-bottom:16px; border-radius:4px; }
+  .spec{ border:1px solid var(--border); background:var(--bg-panel); margin-bottom:16px; border-radius:4px; overflow:hidden; }
+  .spec-body{ padding:22px 24px; }
   .spec-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:4px; }
   .spec-code{ font-family:var(--mono); font-size:11px; color:var(--accent-2); letter-spacing:0.03em; margin-bottom:6px; display:block; font-weight:600; }
   .spec-title{ font-size:18px; font-weight:700; color:var(--text); margin:0; }
@@ -139,9 +196,9 @@
   }
 
   /* ---------- ADDITIONAL EXPERIENCE ---------- */
-  .exp-row{ display:grid; grid-template-columns: 190px 1fr; gap:18px; padding:16px 0; border-top:1px solid var(--border); }
-  .exp-row:first-child{ border-top:none; }
-  @media (max-width:640px){ .exp-row{ grid-template-columns:1fr; gap:4px; } }
+  .exp-card{ border:1px solid var(--border); background:var(--bg-panel); margin-bottom:14px; border-radius:4px; overflow:hidden; }
+  .exp-body{ padding:16px 20px; display:grid; grid-template-columns: 150px 1fr; gap:16px; }
+  @media (max-width:640px){ .exp-body{ grid-template-columns:1fr; } }
   .exp-when{ font-family:var(--mono); font-size:11px; color:var(--text-faint); padding-top:2px; }
   .exp-title{ font-weight:600; color:var(--text); font-size:14.5px; margin-bottom:2px; }
   .exp-org{ font-family:var(--mono); font-size:11px; color:var(--accent-2); margin-bottom:6px; }
@@ -162,6 +219,27 @@
   .edu-school{ font-weight:600; font-size:14.5px; color:var(--text); }
   .edu-degree{ font-size:13.5px; color:var(--text-dim); }
   .edu-when{ font-family:var(--mono); font-size:11px; color:var(--text-faint); white-space:nowrap; }
+
+  /* ---------- RESUME ---------- */
+  .resume-panel{ border:1px solid var(--border); background:var(--bg-panel); border-radius:4px; padding:20px; }
+  .resume-top{ display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:16px; flex-wrap:wrap; }
+  .resume-top p{ color:var(--text-dim); font-size:14px; margin:0; max-width:50ch; }
+  .resume-frame-wrap{
+    border:1px solid var(--border); border-radius:4px; overflow:hidden; background:var(--bg-subtle);
+    aspect-ratio: 8.5 / 7;
+  }
+  .resume-frame-wrap iframe{ width:100%; height:100%; border:0; display:block; }
+  .resume-placeholder{
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+    height:100%; text-align:center; padding:24px;
+  }
+  .resume-placeholder svg{ width:32px; height:32px; color:var(--text-faint); }
+  .resume-placeholder .ph-label{ font-family:var(--mono); font-size:11px; color:var(--text-faint); }
+  .resume-placeholder code{
+    font-family:var(--mono); font-size:11px; color:var(--accent-2); background:var(--bg-panel);
+    border:1px solid var(--border); padding:2px 6px; border-radius:3px;
+  }
+  #resumeFrame{ display:none; }
 
   /* ---------- FOOTER / CONTACT ---------- */
   footer{ padding:52px 0 60px; }
@@ -187,6 +265,7 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
+      <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -230,59 +309,68 @@
     <div class="section-head"><h2>Featured Projects</h2><div class="rule"></div></div>
 
     <article class="spec">
-      <div class="spec-head">
-        <div>
-          <span class="spec-code">PROJ · CANADARM2-IK</span>
-          <h3 class="spec-title">Forward &amp; Inverse Kinematics for Canadarm2</h3>
-          <p class="spec-org">Robot Dynamics Subteam Lead — SpaceCraft VR Lab, Texas A&amp;M University</p>
+      <div class="carousel carousel--lg carousel-auto" data-prefix="images/canadarm2-" data-count="5" data-ext=".jpg"></div>
+      <div class="spec-body">
+        <div class="spec-head">
+          <div>
+            <span class="spec-code">PROJ · CANADARM2-IK</span>
+            <h3 class="spec-title">Forward &amp; Inverse Kinematics for Canadarm2</h3>
+            <p class="spec-org">Robot Dynamics Subteam Lead — SpaceCraft VR Lab, Texas A&amp;M University</p>
+          </div>
+          <div class="spec-meta">08/2025 – 05/2026</div>
         </div>
-        <div class="spec-meta">08/2025 – 05/2026</div>
-      </div>
-      <ul>
-        <li>I developed forward and velocity-level inverse kinematics for a simulated Canadarm2, the ISS's robotic arm, using Jacobian-based control for closed-loop end-effector motion.</li>
-        <li>I integrated the control algorithms into the Space Teams PRO simulation platform and validated performance against mission scenarios.</li>
-        <li>I compiled my findings into a poster and presented it to faculty and industry judges at the AggiE_Challenge Research Expo.</li>
-      </ul>
-      <div class="chip-row">
-        <span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Jacobian IK</span><span class="chip">Robot Kinematics</span>
+        <ul>
+          <li>I developed forward and velocity-level inverse kinematics for a simulated Canadarm2, the ISS's robotic arm, using Jacobian-based control for closed-loop end-effector motion.</li>
+          <li>I integrated the control algorithms into the Space Teams PRO simulation platform and validated performance against mission scenarios.</li>
+          <li>I compiled my findings into a poster and presented it to faculty and industry judges at the AggiE_Challenge Research Expo.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Jacobian IK</span><span class="chip">Robot Kinematics</span>
+        </div>
       </div>
     </article>
 
     <article class="spec">
-      <div class="spec-head">
-        <div>
-          <span class="spec-code">PROJ · SUSPENSION-DAQ</span>
-          <h3 class="spec-title">Multi-Sensor DAQ for a Single-Wheel Suspension Tester</h3>
-          <p class="spec-org">Data Acquisition &amp; Processing Lead — Capstone Project, Texas A&amp;M University</p>
+      <div class="carousel carousel--lg carousel-auto" data-prefix="images/suspension-daq-" data-count="5" data-ext=".jpg"></div>
+      <div class="spec-body">
+        <div class="spec-head">
+          <div>
+            <span class="spec-code">PROJ · SUSPENSION-DAQ</span>
+            <h3 class="spec-title">Multi-Sensor DAQ for a Single-Wheel Suspension Tester</h3>
+            <p class="spec-org">Data Acquisition &amp; Processing Lead — Capstone Project, Texas A&amp;M University</p>
+          </div>
+          <div class="spec-meta">08/2025 – 05/2026</div>
         </div>
-        <div class="spec-meta">08/2025 – 05/2026</div>
-      </div>
-      <ul>
-        <li>I engineered a multi-sensor DAQ system fusing IMUs, load cells, and strain gauges into a real-time dashboard for continuous state estimation of suspension performance.</li>
-        <li>I built and validated a single-wheel tester capable of controlled dynamic and static loading to characterize wheel response under representative driving conditions.</li>
-        <li>I wrote the SOPs and safety protocols that governed rig operation, and managed the project budget and vendor sourcing.</li>
-      </ul>
-      <div class="chip-row">
-        <span class="chip">Sensor Fusion</span><span class="chip">IMU / Load Cell / Strain Gauge</span><span class="chip">Real-Time Dashboards</span><span class="chip">Test Rig Design</span>
+        <ul>
+          <li>I engineered a multi-sensor DAQ system fusing IMUs, load cells, and strain gauges into a real-time dashboard for continuous state estimation of suspension performance.</li>
+          <li>I built and validated a single-wheel tester capable of controlled dynamic and static loading to characterize wheel response under representative driving conditions.</li>
+          <li>I wrote the SOPs and safety protocols that governed rig operation, and managed the project budget and vendor sourcing.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">Sensor Fusion</span><span class="chip">IMU / Load Cell / Strain Gauge</span><span class="chip">Real-Time Dashboards</span><span class="chip">Test Rig Design</span>
+        </div>
       </div>
     </article>
 
     <article class="spec">
-      <div class="spec-head">
-        <div>
-          <span class="spec-code">PROJ · ACUTRONIC-FEA</span>
-          <h3 class="spec-title">Actuation Hardware Modeling &amp; Validation</h3>
-          <p class="spec-org">Mechanical Design Intern — Acutronic Actuation Inc., Austin, TX</p>
+      <div class="carousel carousel--lg carousel-auto" data-prefix="images/acutronic-" data-count="5" data-ext=".jpg"></div>
+      <div class="spec-body">
+        <div class="spec-head">
+          <div>
+            <span class="spec-code">PROJ · ACUTRONIC-FEA</span>
+            <h3 class="spec-title">Actuation Hardware Modeling &amp; Validation</h3>
+            <p class="spec-org">Mechanical Design Intern — Acutronic Actuation Inc., Austin, TX</p>
+          </div>
+          <div class="spec-meta">05/2025 – 08/2025</div>
         </div>
-        <div class="spec-meta">05/2025 – 08/2025</div>
-      </div>
-      <ul>
-        <li>I modeled 20+ mechanism and actuation components across motors, actuators, gearboxes, and test stands, standardizing interfaces to cut integration rework.</li>
-        <li>I ran FEA, thermal, and CFD simulations on 50+ components and assemblies in ANSYS to validate structural and thermal performance before fabrication.</li>
-        <li>I automated testing and data-analysis workflows in Python, cutting turnaround time and improving reproducibility across the design team.</li>
-      </ul>
-      <div class="chip-row">
-        <span class="chip">ANSYS FEA / CFD / Thermal</span><span class="chip">SolidWorks</span><span class="chip">Python Automation</span>
+        <ul>
+          <li>I modeled 20+ mechanism and actuation components across motors, actuators, gearboxes, and test stands, standardizing interfaces to cut integration rework.</li>
+          <li>I ran FEA, thermal, and CFD simulations on 50+ components and assemblies in ANSYS to validate structural and thermal performance before fabrication.</li>
+          <li>I automated testing and data-analysis workflows in Python, cutting turnaround time and improving reproducibility across the design team.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">ANSYS FEA / CFD / Thermal</span><span class="chip">SolidWorks</span><span class="chip">Python Automation</span>
+        </div>
       </div>
     </article>
   </div>
@@ -292,32 +380,41 @@
   <div class="wrap">
     <div class="section-head"><h2>Additional Experience</h2><div class="rule"></div></div>
 
-    <div class="exp-row">
-      <div class="exp-when">05/2023 – 05/2026</div>
-      <div>
-        <div class="exp-title">Suspension, Steering, Wheels &amp; Brakes Subteam Member</div>
-        <div class="exp-org">Texas A&amp;M Solar Car Racing</div>
-        <div class="exp-desc">I spent three years engineering braking and wheel-assembly components from CAD through simulation and physical testing, and defended my designs in formal reviews before faculty and industry judges.</div>
+    <article class="exp-card">
+      <div class="carousel carousel--sm carousel-auto" data-prefix="images/solar-car-" data-count="3" data-ext=".jpg"></div>
+      <div class="exp-body">
+        <div class="exp-when">05/2023 – 05/2026</div>
+        <div>
+          <div class="exp-title">Suspension, Steering, Wheels &amp; Brakes Subteam Member</div>
+          <div class="exp-org">Texas A&amp;M Solar Car Racing</div>
+          <div class="exp-desc">I spent three years engineering braking and wheel-assembly components from CAD through simulation and physical testing, and defended my designs in formal reviews before faculty and industry judges.</div>
+        </div>
       </div>
-    </div>
+    </article>
 
-    <div class="exp-row">
-      <div class="exp-when">08/2022 – 06/2025</div>
-      <div>
-        <div class="exp-title">VEXU Team Lead · Treasurer · Underclassman Rep</div>
-        <div class="exp-org">Aggie Robotics, Texas A&amp;M University</div>
-        <div class="exp-desc">I directed the team through two international VEXU competitions and led development of a two-axis motorized flywheel turret, restructuring our test process to run concurrently with build.</div>
+    <article class="exp-card">
+      <div class="carousel carousel--sm carousel-auto" data-prefix="images/vexu-" data-count="3" data-ext=".jpg"></div>
+      <div class="exp-body">
+        <div class="exp-when">08/2022 – 06/2025</div>
+        <div>
+          <div class="exp-title">VEXU Team Lead · Treasurer · Underclassman Rep</div>
+          <div class="exp-org">Aggie Robotics, Texas A&amp;M University</div>
+          <div class="exp-desc">I directed the team through two international VEXU competitions and led development of a two-axis motorized flywheel turret, restructuring our test process to run concurrently with build.</div>
+        </div>
       </div>
-    </div>
+    </article>
 
-    <div class="exp-row">
-      <div class="exp-when">08/2024 – 04/2025</div>
-      <div>
-        <div class="exp-title">Student Research Assistant</div>
-        <div class="exp-org">INVENT Lab, Texas A&amp;M University</div>
-        <div class="exp-desc">I ran tribology experiments on the electro-adhesion, humidity, and temperature effects on friction and wear, and migrated the lab's analysis codebase into a unified MATLAB/Python pipeline.</div>
+    <article class="exp-card">
+      <div class="carousel carousel--sm carousel-auto" data-prefix="images/invent-lab-" data-count="3" data-ext=".jpg"></div>
+      <div class="exp-body">
+        <div class="exp-when">08/2024 – 04/2025</div>
+        <div>
+          <div class="exp-title">Student Research Assistant</div>
+          <div class="exp-org">INVENT Lab, Texas A&amp;M University</div>
+          <div class="exp-desc">I ran tribology experiments on electro-adhesion, humidity, and temperature effects on friction and wear, and migrated the lab's analysis codebase into a unified MATLAB/Python pipeline.</div>
+        </div>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
@@ -373,6 +470,26 @@
   </div>
 </section>
 
+<section id="resume">
+  <div class="wrap">
+    <div class="section-head"><h2>Resume</h2><div class="rule"></div></div>
+    <div class="resume-panel">
+      <div class="resume-top">
+        <p>Preview or download my full resume as a PDF.</p>
+        <a class="btn btn-primary" href="resume.pdf" download>Download PDF</a>
+      </div>
+      <div class="resume-frame-wrap">
+        <iframe id="resumeFrame" title="Avi Punjabi resume preview" src="resume.pdf"></iframe>
+        <div class="resume-placeholder" id="resumePlaceholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 16h6M9 10h2"/></svg>
+          <div class="ph-label">No resume uploaded yet</div>
+          <code>resume.pdf</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer id="contact">
   <div class="wrap">
     <div class="contact-block">
@@ -388,6 +505,7 @@
 </footer>
 
 <script>
+/* ---------------- IK ARM DEMO ---------------- */
 (function(){
   const svg = document.getElementById('armSvg');
   const readout = document.getElementById('armReadout');
@@ -507,6 +625,99 @@
 
   requestAnimationFrame(idleSweep);
   animate();
+})();
+
+/* ---------------- IMAGE CAROUSELS ---------------- */
+(function(){
+  const placeholderIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>';
+
+  function buildCarousel(container){
+    const prefix = container.getAttribute('data-prefix');
+    const ext = container.getAttribute('data-ext') || '.jpg';
+    const count = parseInt(container.getAttribute('data-count'), 10) || 1;
+
+    const track = document.createElement('div');
+    track.className = 'carousel-track';
+
+    const slides = [];
+    for (let i = 1; i <= count; i++){
+      const src = prefix + i + ext;
+      const slide = document.createElement('div');
+      slide.className = 'carousel-slide';
+
+      const img = document.createElement('img');
+      img.alt = 'Project photo ' + i;
+
+      const placeholder = document.createElement('div');
+      placeholder.className = 'img-placeholder';
+      placeholder.innerHTML = placeholderIcon +
+        '<div class="ph-label">Add photo</div><code>' + src + '</code>';
+
+      slide.appendChild(img);
+      slide.appendChild(placeholder);
+      track.appendChild(slide);
+      slides.push({ img, placeholder });
+
+      const tester = new Image();
+      tester.onload = function(){ img.src = src; img.style.display = 'block'; placeholder.style.display = 'none'; };
+      tester.onerror = function(){ /* keep placeholder visible */ };
+      tester.src = src;
+    }
+
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel-btn carousel-prev';
+    prevBtn.setAttribute('aria-label', 'Previous image');
+    prevBtn.innerHTML = '&#8249;';
+
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel-btn carousel-next';
+    nextBtn.setAttribute('aria-label', 'Next image');
+    nextBtn.innerHTML = '&#8250;';
+
+    const dots = document.createElement('div');
+    dots.className = 'carousel-dots';
+    const dotEls = [];
+    for (let i = 0; i < count; i++){
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+      dots.appendChild(dot);
+      dotEls.push(dot);
+    }
+
+    container.appendChild(track);
+    if (count > 1){
+      container.appendChild(prevBtn);
+      container.appendChild(nextBtn);
+      container.appendChild(dots);
+    }
+
+    let index = 0;
+    function goTo(i){
+      index = (i + count) % count;
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      dotEls.forEach((d, di) => d.classList.toggle('is-active', di === index));
+    }
+    prevBtn.addEventListener('click', () => goTo(index - 1));
+    nextBtn.addEventListener('click', () => goTo(index + 1));
+    dotEls.forEach((d, di) => d.addEventListener('click', () => goTo(di)));
+  }
+
+  document.querySelectorAll('.carousel-auto').forEach(buildCarousel);
+})();
+
+/* ---------------- RESUME PREVIEW CHECK ---------------- */
+(function(){
+  const frame = document.getElementById('resumeFrame');
+  const placeholder = document.getElementById('resumePlaceholder');
+  fetch('resume.pdf', { method: 'HEAD', cache: 'no-store' })
+    .then(function(res){
+      if (res.ok){
+        frame.style.display = 'block';
+        placeholder.style.display = 'none';
+      }
+    })
+    .catch(function(){ /* keep placeholder visible */ });
 })();
 </script>
 
