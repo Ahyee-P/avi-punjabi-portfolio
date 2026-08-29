@@ -174,6 +174,38 @@
     border:1px solid rgba(28,35,48,0.25); cursor:pointer; padding:0;
   }
   .carousel-dot.is-active{ background:var(--accent); border-color:var(--accent); }
+  .carousel-caption{
+    padding:8px 24px; font-family:var(--mono); font-size:11px; color:var(--text-faint);
+    border-bottom:1px solid var(--border); background:var(--bg-panel);
+  }
+  .carousel-note{
+    display:flex; align-items:flex-start; gap:10px; padding:14px 24px;
+    border-bottom:1px solid var(--border); background:var(--bg-subtle);
+    font-size:13px; color:var(--text-dim);
+  }
+  .carousel-note svg{ width:18px; height:18px; flex-shrink:0; color:var(--text-faint); margin-top:1px; }
+
+  /* ---------- CERTIFICATIONS ---------- */
+  .cert-block{ margin-top:16px; padding-top:14px; border-top:1px solid var(--border); }
+  .cert-label{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-faint); margin-bottom:8px; }
+  .cert-item{ font-size:14px; color:var(--text-dim); }
+  .cert-status{
+    font-family:var(--mono); font-size:10.5px; color:var(--accent-2); margin-left:8px;
+    border:1px solid var(--border); padding:2px 7px; border-radius:3px; background:var(--bg-subtle);
+  }
+
+  /* ---------- AVATAR / HEADSHOT ---------- */
+  .avatar-row{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+  .avatar{
+    position:relative; width:52px; height:52px; border-radius:50%; overflow:hidden;
+    border:1px solid var(--border-strong); flex-shrink:0; background:var(--bg-subtle);
+  }
+  .avatar img{ width:100%; height:100%; object-fit:cover; display:none; }
+  .avatar-placeholder{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background: repeating-linear-gradient(45deg, var(--bg-subtle), var(--bg-subtle) 6px, #eceef1 6px, #eceef1 12px);
+  }
+  .avatar-placeholder svg{ width:22px; height:22px; color:var(--text-faint); }
 
   /* ---------- PROJECT SPEC SHEETS ---------- */
   .spec{ border:1px solid var(--border); background:var(--bg-panel); margin-bottom:16px; border-radius:4px; overflow:hidden; }
@@ -274,7 +306,15 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Controls &amp; Mechatronics Engineer</p>
+      <div class="avatar-row">
+        <div class="avatar" id="avatarSlot">
+          <img id="avatarImg" alt="Photo of Avi Punjabi">
+          <div class="avatar-placeholder" id="avatarPlaceholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+          </div>
+        </div>
+        <p class="eyebrow" style="margin:0;">Controls &amp; Mechatronics Engineer</p>
+      </div>
       <h1 class="title">I build the control loops and sensor stacks that let hardware move on purpose.</h1>
       <p class="lede">I'm an MEng student at UC Berkeley concentrating in Controls of Robotic and Autonomous Systems. My work spans inverse kinematics on the ISS's Canadarm2, real-time sensor fusion for suspension testing, and FEA-validated actuation hardware — I like teams that iterate quickly between design, simulation, and physical test.</p>
       <div class="cta-row">
@@ -309,7 +349,7 @@
     <div class="section-head"><h2>Featured Projects</h2><div class="rule"></div></div>
 
     <article class="spec">
-      <div class="carousel carousel--lg carousel-auto" data-prefix="images/canadarm2-" data-count="3" data-ext=".jpg"></div>
+      <div class="carousel carousel--lg carousel-auto" data-prefix="images/canadarm2-" data-count="5" data-ext=".jpg" data-captions="Caption for photo 1|Caption for photo 2|Caption for photo 3|Caption for photo 4|Caption for photo 5"></div>
       <div class="spec-body">
         <div class="spec-head">
           <div>
@@ -331,7 +371,7 @@
     </article>
 
     <article class="spec">
-      <div class="carousel carousel--lg carousel-auto" data-prefix="images/suspension-daq-" data-count="3" data-ext=".jpg"></div>
+      <div class="carousel carousel--lg carousel-auto" data-prefix="images/suspension-daq-" data-count="3" data-ext=".jpg" data-captions="Caption for photo 1|Caption for photo 2|Caption for photo 3"></div>
       <div class="spec-body">
         <div class="spec-head">
           <div>
@@ -353,29 +393,7 @@
     </article>
 
     <article class="spec">
-      <div class="carousel carousel--lg carousel-auto" data-prefix="images/acutronic-" data-count="3" data-ext=".jpg"></div>
-      <div class="spec-body">
-        <div class="spec-head">
-          <div>
-            <span class="spec-code">PROJ · ACUTRONIC-FEA</span>
-            <h3 class="spec-title">Actuation Hardware Modeling &amp; Validation</h3>
-            <p class="spec-org">Mechanical Design Intern — Acutronic Actuation Inc., Austin, TX</p>
-          </div>
-          <div class="spec-meta">05/2025 – 08/2025</div>
-        </div>
-        <ul>
-          <li>I modeled 20+ mechanism and actuation components across motors, actuators, gearboxes, and test stands, standardizing interfaces to cut integration rework.</li>
-          <li>I ran FEA, thermal, and CFD simulations on 50+ components and assemblies in ANSYS to validate structural and thermal performance before fabrication.</li>
-          <li>I automated testing and data-analysis workflows in Python, cutting turnaround time and improving reproducibility across the design team.</li>
-        </ul>
-        <div class="chip-row">
-          <span class="chip">ANSYS FEA / CFD / Thermal</span><span class="chip">SolidWorks</span><span class="chip">Python Automation</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="spec">
-      <div class="carousel carousel--lg carousel-auto" data-prefix="images/vexu-" data-count="3" data-ext=".jpg"></div>
+      <div class="carousel carousel--lg carousel-auto" data-prefix="images/vexu-" data-count="1" data-ext=".jpg" data-captions="Caption for photo 1"></div>
       <div class="spec-body">
         <div class="spec-head">
           <div>
@@ -393,6 +411,31 @@
         </ul>
         <div class="chip-row">
           <span class="chip">CAD / FEA</span><span class="chip">Robot Design</span><span class="chip">Team Leadership</span><span class="chip">Agile / Gantt Planning</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="spec">
+      <div class="carousel-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+        <span>Photos from this internship aren't shown here — Acutronic's work is proprietary and I'm not able to display it publicly.</span>
+      </div>
+      <div class="spec-body">
+        <div class="spec-head">
+          <div>
+            <span class="spec-code">PROJ · ACUTRONIC-FEA</span>
+            <h3 class="spec-title">Actuation Hardware Modeling &amp; Validation</h3>
+            <p class="spec-org">Mechanical Design Intern — Acutronic Actuation Inc., Austin, TX</p>
+          </div>
+          <div class="spec-meta">05/2025 – 08/2025</div>
+        </div>
+        <ul>
+          <li>I modeled 20+ mechanism and actuation components across motors, actuators, gearboxes, and test stands, standardizing interfaces to cut integration rework.</li>
+          <li>I ran FEA, thermal, and CFD simulations on 50+ components and assemblies in ANSYS to validate structural and thermal performance before fabrication.</li>
+          <li>I automated testing and data-analysis workflows in Python, cutting turnaround time and improving reproducibility across the design team.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">ANSYS FEA / CFD / Thermal</span><span class="chip">SolidWorks</span><span class="chip">Python Automation</span>
         </div>
       </div>
     </article>
@@ -508,6 +551,10 @@
         <div class="edu-degree">B.S. Mechanical Engineering, Minor in Computer Science</div>
       </div>
       <div class="edu-when">08/2022 – 05/2026</div>
+    </div>
+    <div class="cert-block">
+      <div class="cert-label">Certifications</div>
+      <div class="cert-item">Fundamentals of Engineering (FE) — Mechanical <span class="cert-status">Passed</span></div>
     </div>
   </div>
 </section>
@@ -677,6 +724,7 @@
     const prefix = container.getAttribute('data-prefix');
     const ext = container.getAttribute('data-ext') || '.jpg';
     const count = parseInt(container.getAttribute('data-count'), 10) || 1;
+    const captions = (container.getAttribute('data-captions') || '').split('|');
 
     const track = document.createElement('div');
     track.className = 'carousel-track';
@@ -734,18 +782,36 @@
       container.appendChild(dots);
     }
 
+    const captionEl = document.createElement('div');
+    captionEl.className = 'carousel-caption';
+    container.insertAdjacentElement('afterend', captionEl);
+
     let index = 0;
     function goTo(i){
       index = (i + count) % count;
       track.style.transform = 'translateX(-' + (index * 100) + '%)';
       dotEls.forEach((d, di) => d.classList.toggle('is-active', di === index));
+      captionEl.textContent = captions[index] || ('Caption for photo ' + (index + 1));
     }
     prevBtn.addEventListener('click', () => goTo(index - 1));
     nextBtn.addEventListener('click', () => goTo(index + 1));
     dotEls.forEach((d, di) => d.addEventListener('click', () => goTo(di)));
+    captionEl.textContent = captions[0] || 'Caption for photo 1';
   }
 
   document.querySelectorAll('.carousel-auto').forEach(buildCarousel);
+})();
+
+/* ---------------- HEADSHOT ---------------- */
+(function(){
+  const img = document.getElementById('avatarImg');
+  const placeholder = document.getElementById('avatarPlaceholder');
+  if (!img) return;
+  const src = 'images/headshot.jpg';
+  const tester = new Image();
+  tester.onload = function(){ img.src = src; img.style.display = 'block'; placeholder.style.display = 'none'; };
+  tester.onerror = function(){ /* keep placeholder visible */ };
+  tester.src = src;
 })();
 
 /* ---------------- RESUME PREVIEW CHECK ---------------- */
