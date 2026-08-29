@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avi Punjabi — Controls & Mechatronics Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfbfa;
+    --bg-panel:#ffffff;
+    --bg-subtle:#f3f4f6;
+    --text:#1c2330;
+    --text-dim:#565f70;
+    --text-faint:#8a91a0;
+    --accent:#1f3a5f;
+    --accent-2:#3f7c74;
+    --border:#e2e4e9;
+    --border-strong:#c9cdd6;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+    --maxw: 940px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{ background:var(--accent); color:#fff; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+
+  /* ---------- NAV ---------- */
+  nav.topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,251,250,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  nav.topbar .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:56px;
+  }
+  .brand{ font-family:var(--mono); font-size:13px; letter-spacing:0.02em; color:var(--text); font-weight:600; }
+  .navlinks{ display:flex; gap:24px; }
+  .navlinks a{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.04em;
+    color:var(--text-dim); text-transform:uppercase;
+  }
+  .navlinks a:hover{ color:var(--accent); text-decoration:none; }
+  @media (max-width:640px){ .navlinks{ display:none; } }
+
+  /* ---------- HERO ---------- */
+  header.hero{ border-bottom:1px solid var(--border); padding:56px 0 44px; }
+  .hero-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap:44px; align-items:center; }
+  @media (max-width:800px){ .hero-grid{ grid-template-columns:1fr; } }
+
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.08em;
+    color:var(--accent-2); text-transform:uppercase; margin:0 0 12px; font-weight:600;
+  }
+  h1.title{
+    font-family:var(--sans); font-weight:700;
+    font-size:clamp(26px, 3.4vw, 36px);
+    line-height:1.25; letter-spacing:-0.01em;
+    margin:0 0 16px; color:var(--text);
+  }
+  p.lede{ font-size:15.5px; color:var(--text-dim); max-width:54ch; margin:0 0 22px; }
+  .cta-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; }
+  .btn{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.02em;
+    padding:10px 16px; border-radius:3px; border:1px solid var(--border-strong);
+    transition:all .15s ease; display:inline-flex; align-items:center; gap:6px;
+  }
+  .btn-primary{ background:var(--accent); color:#fff; border-color:var(--accent); font-weight:500; }
+  .btn-primary:hover{ background:#16304f; text-decoration:none; }
+  .btn-ghost{ color:var(--text); background:var(--bg-panel); }
+  .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); text-decoration:none; }
+
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.02em;
+    color:var(--text-dim); border:1px solid var(--border); background:var(--bg-subtle);
+    padding:7px 12px; border-radius:3px;
+  }
+
+  /* ---------- IK ARM DEMO ---------- */
+  .arm-panel{ border:1px solid var(--border); background:var(--bg-panel); border-radius:4px; padding:14px; }
+  .arm-caption{
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:var(--mono); font-size:10px; letter-spacing:0.03em;
+    color:var(--text-faint); text-transform:uppercase; margin-bottom:8px;
+  }
+  .arm-readout{ font-family:var(--mono); font-size:11px; color:var(--accent-2); }
+  svg#armSvg{ width:100%; height:auto; display:block; touch-action:none; cursor:crosshair; }
+  .arm-hint{ font-family:var(--mono); font-size:10px; color:var(--text-faint); text-align:center; margin-top:6px; }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding:52px 0; border-bottom:1px solid var(--border); }
+  .section-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:26px; }
+  .section-head h2{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--text); margin:0; font-weight:600;
+  }
+  .section-head .rule{ flex:1; height:1px; background:var(--border); }
+
+  p.summary{ color:var(--text-dim); max-width:70ch; font-size:15px; }
+  p.summary strong{ color:var(--text); font-weight:600; }
+
+  /* ---------- PROJECT SPEC SHEETS ---------- */
+  .spec{ border:1px solid var(--border); background:var(--bg-panel); padding:22px 24px; margin-bottom:16px; border-radius:4px; }
+  .spec-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:4px; }
+  .spec-code{ font-family:var(--mono); font-size:11px; color:var(--accent-2); letter-spacing:0.03em; margin-bottom:6px; display:block; font-weight:600; }
+  .spec-title{ font-size:18px; font-weight:700; color:var(--text); margin:0; }
+  .spec-meta{ font-family:var(--mono); font-size:11px; color:var(--text-faint); text-align:right; white-space:nowrap; }
+  .spec-org{ font-size:13px; color:var(--text-dim); margin:2px 0 14px; }
+
+  .spec ul{ margin:0 0 16px; padding-left:18px; color:var(--text-dim); font-size:14.5px; }
+  .spec ul li{ margin-bottom:7px; }
+  .spec ul li::marker{ color:var(--accent-2); }
+
+  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:0.01em;
+    color:var(--text-dim); border:1px solid var(--border); padding:4px 9px;
+    border-radius:3px; background:var(--bg-subtle);
+  }
+
+  /* ---------- ADDITIONAL EXPERIENCE ---------- */
+  .exp-row{ display:grid; grid-template-columns: 190px 1fr; gap:18px; padding:16px 0; border-top:1px solid var(--border); }
+  .exp-row:first-child{ border-top:none; }
+  @media (max-width:640px){ .exp-row{ grid-template-columns:1fr; gap:4px; } }
+  .exp-when{ font-family:var(--mono); font-size:11px; color:var(--text-faint); padding-top:2px; }
+  .exp-title{ font-weight:600; color:var(--text); font-size:14.5px; margin-bottom:2px; }
+  .exp-org{ font-family:var(--mono); font-size:11px; color:var(--accent-2); margin-bottom:6px; }
+  .exp-desc{ color:var(--text-dim); font-size:14px; }
+
+  /* ---------- SKILLS ---------- */
+  .skill-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--border); border-radius:4px; overflow:hidden; }
+  @media (max-width:700px){ .skill-grid{ grid-template-columns:1fr; } }
+  .skill-cell{ padding:16px 20px; border-bottom:1px solid var(--border); border-right:1px solid var(--border); background:var(--bg-panel); }
+  .skill-grid .skill-cell:nth-child(2n){ border-right:none; }
+  @media (max-width:700px){ .skill-cell{ border-right:none !important; } }
+  .skill-label{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.05em; color:var(--text-faint); text-transform:uppercase; margin-bottom:6px; }
+  .skill-value{ font-size:14px; color:var(--text-dim); }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-row{ display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-top:1px solid var(--border); flex-wrap:wrap; }
+  .edu-row:first-child{ border-top:none; }
+  .edu-school{ font-weight:600; font-size:14.5px; color:var(--text); }
+  .edu-degree{ font-size:13.5px; color:var(--text-dim); }
+  .edu-when{ font-family:var(--mono); font-size:11px; color:var(--text-faint); white-space:nowrap; }
+
+  /* ---------- FOOTER / CONTACT ---------- */
+  footer{ padding:52px 0 60px; }
+  .contact-block h2{ font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 14px; color:var(--text); }
+  .contact-block p{ color:var(--text-dim); max-width:46ch; font-size:14.5px; }
+  .contact-links{ display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+  .contact-links a{ font-family:var(--mono); font-size:13px; }
+  .foot-signoff{ font-family:var(--mono); font-size:10.5px; color:var(--text-faint); margin-top:36px; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <div class="brand">Avi Punjabi</div>
+    <div class="navlinks">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Controls &amp; Mechatronics Engineer</p>
+      <h1 class="title">I build the control loops and sensor stacks that let hardware move on purpose.</h1>
+      <p class="lede">I'm an MEng student at UC Berkeley concentrating in Controls of Robotic and Autonomous Systems. My work spans inverse kinematics on the ISS's Canadarm2, real-time sensor fusion for suspension testing, and FEA-validated actuation hardware — I like teams that iterate quickly between design, simulation, and physical test.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:avipunjabi10@gmail.com">Email me</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/avi-punjabi/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <div class="badge">MEng student, UC Berkeley — Controls of Robotic &amp; Autonomous Systems</div>
+    </div>
+
+    <div class="arm-panel">
+      <div class="arm-caption">
+        <span>Fig. — 2-link inverse kinematics</span>
+        <span class="arm-readout" id="armReadout">θ1 0.0° · θ2 0.0°</span>
+      </div>
+      <svg id="armSvg" viewBox="0 0 360 300" aria-hidden="true"></svg>
+      <div class="arm-hint">move your cursor — the arm solves for it in real time</div>
+    </div>
+  </div>
+</header>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="section-head"><h2>Summary</h2><div class="rule"></div></div>
+    <p class="summary">
+      <strong>I'm an MEng student at UC Berkeley</strong> concentrating in Controls of Robotic and Autonomous Systems, and I spent three years before that doing hands-on hardware work at Texas A&amp;M across kinematics, sensor fusion, and mechanical design. I'm comfortable across the full stack of a hardware project — writing the control algorithm, building the test rig that validates it, and running the FEA that proves the part won't fail. I'm most drawn to small, fast-moving teams doing tight design-simulation-test loops, rather than pure CAD work or slower-moving organizations.
+    </p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head"><h2>Featured Projects</h2><div class="rule"></div></div>
+
+    <article class="spec">
+      <div class="spec-head">
+        <div>
+          <span class="spec-code">PROJ · CANADARM2-IK</span>
+          <h3 class="spec-title">Forward &amp; Inverse Kinematics for Canadarm2</h3>
+          <p class="spec-org">Robot Dynamics Subteam Lead — SpaceCraft VR Lab, Texas A&amp;M University</p>
+        </div>
+        <div class="spec-meta">08/2025 – 05/2026</div>
+      </div>
+      <ul>
+        <li>I developed forward and velocity-level inverse kinematics for a simulated Canadarm2, the ISS's robotic arm, using Jacobian-based control for closed-loop end-effector motion.</li>
+        <li>I integrated the control algorithms into the Space Teams PRO simulation platform and validated performance against mission scenarios.</li>
+        <li>I compiled my findings into a poster and presented it to faculty and industry judges at the AggiE_Challenge Research Expo.</li>
+      </ul>
+      <div class="chip-row">
+        <span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Jacobian IK</span><span class="chip">Robot Kinematics</span>
+      </div>
+    </article>
+
+    <article class="spec">
+      <div class="spec-head">
+        <div>
+          <span class="spec-code">PROJ · SUSPENSION-DAQ</span>
+          <h3 class="spec-title">Multi-Sensor DAQ for a Single-Wheel Suspension Tester</h3>
+          <p class="spec-org">Data Acquisition &amp; Processing Lead — Capstone Project, Texas A&amp;M University</p>
+        </div>
+        <div class="spec-meta">08/2025 – 05/2026</div>
+      </div>
+      <ul>
+        <li>I engineered a multi-sensor DAQ system fusing IMUs, load cells, and strain gauges into a real-time dashboard for continuous state estimation of suspension performance.</li>
+        <li>I built and validated a single-wheel tester capable of controlled dynamic and static loading to characterize wheel response under representative driving conditions.</li>
+        <li>I wrote the SOPs and safety protocols that governed rig operation, and managed the project budget and vendor sourcing.</li>
+      </ul>
+      <div class="chip-row">
+        <span class="chip">Sensor Fusion</span><span class="chip">IMU / Load Cell / Strain Gauge</span><span class="chip">Real-Time Dashboards</span><span class="chip">Test Rig Design</span>
+      </div>
+    </article>
+
+    <article class="spec">
+      <div class="spec-head">
+        <div>
+          <span class="spec-code">PROJ · ACUTRONIC-FEA</span>
+          <h3 class="spec-title">Actuation Hardware Modeling &amp; Validation</h3>
+          <p class="spec-org">Mechanical Design Intern — Acutronic Actuation Inc., Austin, TX</p>
+        </div>
+        <div class="spec-meta">05/2025 – 08/2025</div>
+      </div>
+      <ul>
+        <li>I modeled 20+ mechanism and actuation components across motors, actuators, gearboxes, and test stands, standardizing interfaces to cut integration rework.</li>
+        <li>I ran FEA, thermal, and CFD simulations on 50+ components and assemblies in ANSYS to validate structural and thermal performance before fabrication.</li>
+        <li>I automated testing and data-analysis workflows in Python, cutting turnaround time and improving reproducibility across the design team.</li>
+      </ul>
+      <div class="chip-row">
+        <span class="chip">ANSYS FEA / CFD / Thermal</span><span class="chip">SolidWorks</span><span class="chip">Python Automation</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head"><h2>Additional Experience</h2><div class="rule"></div></div>
+
+    <div class="exp-row">
+      <div class="exp-when">05/2023 – 05/2026</div>
+      <div>
+        <div class="exp-title">Suspension, Steering, Wheels &amp; Brakes Subteam Member</div>
+        <div class="exp-org">Texas A&amp;M Solar Car Racing</div>
+        <div class="exp-desc">I spent three years engineering braking and wheel-assembly components from CAD through simulation and physical testing, and defended my designs in formal reviews before faculty and industry judges.</div>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-when">08/2022 – 06/2025</div>
+      <div>
+        <div class="exp-title">VEXU Team Lead · Treasurer · Underclassman Rep</div>
+        <div class="exp-org">Aggie Robotics, Texas A&amp;M University</div>
+        <div class="exp-desc">I directed the team through two international VEXU competitions and led development of a two-axis motorized flywheel turret, restructuring our test process to run concurrently with build.</div>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-when">08/2024 – 04/2025</div>
+      <div>
+        <div class="exp-title">Student Research Assistant</div>
+        <div class="exp-org">INVENT Lab, Texas A&amp;M University</div>
+        <div class="exp-desc">I ran tribology experiments on electro-adhesion, humidity, and temperature effects on friction and wear, and migrated the lab's analysis codebase into a unified MATLAB/Python pipeline.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head"><h2>Skills</h2><div class="rule"></div></div>
+    <div class="skill-grid">
+      <div class="skill-cell">
+        <div class="skill-label">Controls &amp; Autonomy</div>
+        <div class="skill-value">Control system design, robot kinematics &amp; dynamics, Kalman filtering &amp; sensor fusion, reinforcement learning</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-label">Software</div>
+        <div class="skill-value">C++, Python, ROS2, MATLAB, embedded systems programming</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-label">Hardware &amp; Test</div>
+        <div class="skill-value">DAQ systems, circuit design &amp; signal conditioning, testing &amp; validation design</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-label">Design &amp; Analysis</div>
+        <div class="skill-value">SolidWorks, AutoCAD, Siemens NX, ANSYS FEA/CFD/thermal, GD&amp;T, FMEA</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-label">Fabrication</div>
+        <div class="skill-value">CNC, water jet, plasma cutting, sheet metal (SendCutSend), angle grinding</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-label">Process</div>
+        <div class="skill-value">Design reviews, SOPs &amp; safety protocols, vendor sourcing, budget management</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head"><h2>Education</h2><div class="rule"></div></div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-school">University of California, Berkeley</div>
+        <div class="edu-degree">M.Eng. Mechanical Engineering — Concentration in Controls of Robotic and Autonomous Systems</div>
+      </div>
+      <div class="edu-when">08/2026 – 05/2027</div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-school">Texas A&amp;M University</div>
+        <div class="edu-degree">B.S. Mechanical Engineering, Minor in Computer Science</div>
+      </div>
+      <div class="edu-when">08/2022 – 05/2026</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-block">
+      <h2>Get in touch</h2>
+      <p>I'm open to roles on hardware-focused robotics teams — controls, mechatronics, or autonomous systems work in particular. Feel free to reach out.</p>
+      <div class="contact-links">
+        <a href="mailto:avipunjabi10@gmail.com">avipunjabi10@gmail.com</a>
+        <a href="https://www.linkedin.com/in/avi-punjabi/" target="_blank" rel="noopener">linkedin.com/in/avi-punjabi</a>
+      </div>
+    </div>
+    <div class="foot-signoff">Berkeley, California</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const svg = document.getElementById('armSvg');
+  const readout = document.getElementById('armReadout');
+  const ns = 'http://www.w3.org/2000/svg';
+  const W = 360, H = 300;
+  const base = { x: 70, y: 230 };
+  const L1 = 110, L2 = 95;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function el(tag, attrs){
+    const e = document.createElementNS(ns, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  const envelope = el('circle', {
+    cx: base.x, cy: base.y, r: L1 + L2,
+    fill: 'none', stroke: '#e2e4e9', 'stroke-width': 1, 'stroke-dasharray': '3 5'
+  });
+  svg.appendChild(envelope);
+
+  const baseMount = el('rect', { x: base.x - 14, y: base.y - 6, width: 28, height: 34, rx: 2,
+    fill: '#f3f4f6', stroke: '#c9cdd6', 'stroke-width': 1 });
+  svg.appendChild(baseMount);
+
+  const link1 = el('line', { stroke: '#3f7c74', 'stroke-width': 5, 'stroke-linecap': 'round' });
+  const link2 = el('line', { stroke: '#1f3a5f', 'stroke-width': 5, 'stroke-linecap': 'round' });
+  svg.appendChild(link1);
+  svg.appendChild(link2);
+
+  const j0 = el('circle', { cx: base.x, cy: base.y, r: 6, fill: '#1c2330' });
+  const j1 = el('circle', { r: 5, fill: '#1c2330' });
+  const eff = el('circle', { r: 7, fill: 'none', stroke: '#1f3a5f', 'stroke-width': 2 });
+  svg.appendChild(j0); svg.appendChild(j1); svg.appendChild(eff);
+
+  const targetMark = el('circle', { r: 3, fill: '#3f7c74', opacity: 0.7 });
+  svg.appendChild(targetMark);
+
+  let target = { x: base.x + 150, y: base.y - 80 };
+
+  function solveIK(tx, ty){
+    let dx = tx - base.x, dy = ty - base.y;
+    let d = Math.hypot(dx, dy);
+    const minR = Math.abs(L1 - L2) + 4;
+    const maxR = L1 + L2 - 4;
+    if (d < minR) { const s = minR / (d || 1); dx *= s; dy *= s; d = minR; }
+    if (d > maxR) { const s = maxR / d; dx *= s; dy *= s; d = maxR; }
+
+    const angleToTarget = Math.atan2(dy, dx);
+    let cosT2 = (d*d - L1*L1 - L2*L2) / (2 * L1 * L2);
+    cosT2 = Math.max(-1, Math.min(1, cosT2));
+    const theta2 = -Math.acos(cosT2);
+    const theta1 = angleToTarget - Math.atan2(L2 * Math.sin(theta2), L1 + L2 * Math.cos(theta2));
+
+    return { theta1, theta2, tx: base.x + dx, ty: base.y + dy };
+  }
+
+  function draw(sol){
+    const j1x = base.x + L1 * Math.cos(sol.theta1);
+    const j1y = base.y + L1 * Math.sin(sol.theta1);
+    const efx = j1x + L2 * Math.cos(sol.theta1 + sol.theta2);
+    const efy = j1y + L2 * Math.sin(sol.theta1 + sol.theta2);
+
+    link1.setAttribute('x1', base.x); link1.setAttribute('y1', base.y);
+    link1.setAttribute('x2', j1x); link1.setAttribute('y2', j1y);
+    link2.setAttribute('x1', j1x); link2.setAttribute('y1', j1y);
+    link2.setAttribute('x2', efx); link2.setAttribute('y2', efy);
+    j1.setAttribute('cx', j1x); j1.setAttribute('cy', j1y);
+    eff.setAttribute('cx', efx); eff.setAttribute('cy', efy);
+    targetMark.setAttribute('cx', sol.tx); targetMark.setAttribute('cy', sol.ty);
+
+    const d1 = (sol.theta1 * 180 / Math.PI).toFixed(1);
+    const d2 = (sol.theta2 * 180 / Math.PI).toFixed(1);
+    readout.textContent = 'θ1 ' + d1 + '° · θ2 ' + d2 + '°';
+  }
+
+  const initSol = solveIK(target.x, target.y);
+  let lerpState = { theta1: initSol.theta1, theta2: initSol.theta2 };
+
+  function animate(){
+    const sol = solveIK(target.x, target.y);
+    if (reduceMotion) {
+      draw(sol);
+    } else {
+      lerpState.theta1 += (sol.theta1 - lerpState.theta1) * 0.12;
+      lerpState.theta2 += (sol.theta2 - lerpState.theta2) * 0.12;
+      draw({ theta1: lerpState.theta1, theta2: lerpState.theta2, tx: sol.tx, ty: sol.ty });
+    }
+    requestAnimationFrame(animate);
+  }
+
+  function setTargetFromEvent(clientX, clientY){
+    const rect = svg.getBoundingClientRect();
+    const scaleX = W / rect.width, scaleY = H / rect.height;
+    target.x = (clientX - rect.left) * scaleX;
+    target.y = (clientY - rect.top) * scaleY;
+  }
+
+  svg.addEventListener('pointermove', function(e){
+    setTargetFromEvent(e.clientX, e.clientY);
+    idle = false;
+  });
+  svg.addEventListener('pointerdown', function(){ idle = false; });
+
+  let idle = true;
+  let t0 = performance.now();
+  function idleSweep(now){
+    if (idle) {
+      const t = (now - t0) / 1000;
+      const ang = Math.sin(t * 0.6) * 0.9;
+      const rad = 150 + Math.sin(t * 0.3) * 20;
+      target.x = base.x + Math.cos(ang) * rad;
+      target.y = base.y - 60 - Math.sin(ang) * 40;
+    }
+    requestAnimationFrame(idleSweep);
+  }
+
+  requestAnimationFrame(idleSweep);
+  animate();
+})();
+</script>
+
+</body>
+</html>
