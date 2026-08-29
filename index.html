@@ -476,14 +476,14 @@
     <div class="resume-panel">
       <div class="resume-top">
         <p>Preview or download my full resume as a PDF.</p>
-        <a class="btn btn-primary" href="resume.pdf" download>Download PDF</a>
+        <a class="btn btn-primary" href="Avi_Punjabi_Resume.pdf" download>Download PDF</a>
       </div>
       <div class="resume-frame-wrap">
-        <iframe id="resumeFrame" title="Avi Punjabi resume preview" src="resume.pdf"></iframe>
+        <iframe id="resumeFrame" title="Avi Punjabi resume preview" src="Avi_Punjabi_Resume.pdf"></iframe>
         <div class="resume-placeholder" id="resumePlaceholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 16h6M9 10h2"/></svg>
           <div class="ph-label">No resume uploaded yet</div>
-          <code>resume.pdf</code>
+          <code>Avi_Punjabi_Resume.pdf</code>
         </div>
       </div>
     </div>
@@ -710,7 +710,7 @@
 (function(){
   const frame = document.getElementById('resumeFrame');
   const placeholder = document.getElementById('resumePlaceholder');
-  fetch('resume.pdf', { method: 'HEAD', cache: 'no-store' })
+  fetch('Avi_Punjabi_Resume.pdf', { method: 'HEAD', cache: 'no-store' })
     .then(function(res){
       if (res.ok){
         frame.style.display = 'block';
