@@ -4,301 +4,361 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Avi Punjabi — Controls & Mechatronics Engineer</title>
-<meta name="description" content="Avi Punjabi is a Controls &amp; Mechatronics Engineer and MEng student at UC Berkeley, working on robot kinematics, sensor fusion, and hardware validation.">
+<meta name="description" content="Avi Punjabi is a controls and mechatronics engineer and UC Berkeley MEng student working on robot kinematics, sensor fusion, embedded data acquisition, and hardware validation. Seeking full-time roles starting Summer 2027.">
+<link rel="canonical" href="https://avipunjabi.com/">
+<meta name="author" content="Avi Punjabi">
+<meta name="theme-color" content="#1f3a5f">
 
-<!-- Social preview (Open Graph / Twitter card). Requires og-image.jpg at the site root — see upload instructions. -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Avi Punjabi">
 <meta property="og:title" content="Avi Punjabi — Controls & Mechatronics Engineer">
-<meta property="og:description" content="Robot kinematics, sensor fusion, and hardware validation work — MEng student at UC Berkeley.">
-<meta property="og:image" content="og-image.jpg">
-<meta property="og:url" content="https://avipunjabi.com">
+<meta property="og:description" content="Robot kinematics, sensor fusion, and hardware validation — UC Berkeley MEng student seeking full-time roles starting Summer 2027.">
+<meta property="og:url" content="https://avipunjabi.com/">
+<meta property="og:image" content="https://avipunjabi.com/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Avi Punjabi — Controls &amp; Mechatronics Engineer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Avi Punjabi — Controls & Mechatronics Engineer">
-<meta name="twitter:description" content="Robot kinematics, sensor fusion, and hardware validation work — MEng student at UC Berkeley.">
-<meta name="twitter:image" content="og-image.jpg">
+<meta name="twitter:description" content="Robot kinematics, sensor fusion, and hardware validation — UC Berkeley MEng student seeking full-time roles starting Summer 2027.">
+<meta name="twitter:image" content="https://avipunjabi.com/og-image.png">
+<meta name="twitter:image:alt" content="Avi Punjabi — Controls &amp; Mechatronics Engineer">
 
-<!-- Favicon placeholder — add favicon.png (512x512 recommended) at the site root. -->
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="data/content.json" as="fetch" type="application/json" crossorigin>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Avi Punjabi",
+  "url": "https://avipunjabi.com/",
+  "image": "https://avipunjabi.com/images/headshot-800.webp",
+  "jobTitle": "Controls & Mechatronics Engineer",
+  "description": "Controls and mechatronics engineer and UC Berkeley MEng student working on robot kinematics, sensor fusion, and hardware validation.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Berkeley", "addressRegion": "CA", "addressCountry": "US" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Texas A&M University" },
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "University of California, Berkeley" },
+  "knowsAbout": ["Control systems", "Robot kinematics", "Inverse kinematics", "Sensor fusion", "Kalman filtering", "Data acquisition", "Embedded systems", "ROS2", "Finite element analysis", "Mechanical design"],
+  "sameAs": ["https://www.linkedin.com/in/avi-punjabi/"]
+}
+</script>
+
 <style>
   :root{
     --bg:#fbfbfa;
     --bg-panel:#ffffff;
     --bg-subtle:#f3f4f6;
     --text:#1c2330;
-    --text-dim:#565f70;
-    --text-faint:#8a91a0;
+    --text-dim:#4d5566;
+    --text-faint:#666d7c;      /* 5:1 on --bg — passes WCAG AA for small text */
     --accent:#1f3a5f;
-    --accent-2:#3f7c74;
+    --accent-hover:#16304f;
+    --accent-2:#2f6b63;        /* text-safe teal, 6:1 on white */
+    --accent-2-line:#3f7c74;   /* decorative strokes only */
+    --warn:#9a4515;
+    --ok:#1f7a4d;
     --border:#e2e4e9;
     --border-strong:#c9cdd6;
-    --mono: 'IBM Plex Mono', ui-monospace, monospace;
-    --sans: 'Inter', system-ui, sans-serif;
-    --maxw: 940px;
+    --mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --maxw:960px;
+    --nav-h:56px;
   }
 
   *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  html{ scroll-behavior:smooth; scroll-padding-top:calc(var(--nav-h) + 12px); -webkit-text-size-adjust:100%; }
   body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:var(--sans);
-    line-height:1.6;
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:var(--sans); font-size:16px; line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
-
+  img{ max-width:100%; }
   ::selection{ background:var(--accent); color:#fff; }
-  a{ color:var(--accent); text-decoration:none; }
-  a:hover{ text-decoration:underline; }
-  a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+  a{ color:var(--accent); text-decoration:underline; text-decoration-color:rgba(31,58,95,.35); text-underline-offset:3px; }
+  a:hover{ text-decoration-color:currentColor; }
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
 
   .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+  @media (max-width:520px){ .wrap{ padding:0 16px; } }
+
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+  .skip-link{
+    position:absolute; left:12px; top:-60px; z-index:100;
+    background:var(--accent); color:#fff; padding:10px 14px; border-radius:3px;
+    font-family:var(--mono); font-size:13px; text-decoration:none;
+  }
+  .skip-link:focus{ top:10px; }
 
   /* ---------- NAV ---------- */
   nav.topbar{
     position:sticky; top:0; z-index:50;
-    background:rgba(251,251,250,0.92);
-    backdrop-filter: blur(6px);
+    background:rgba(251,251,250,0.94);
+    -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
     border-bottom:1px solid var(--border);
   }
-  nav.topbar .wrap{ display:flex; align-items:center; justify-content:space-between; height:56px; }
-  .brand{ font-family:var(--mono); font-size:13px; letter-spacing:0.02em; color:var(--text); font-weight:600; }
-  .navlinks{ display:flex; gap:20px; }
+  nav.topbar .wrap{ display:flex; align-items:center; justify-content:space-between; height:var(--nav-h); }
+  .brand{ font-family:var(--mono); font-size:14px; letter-spacing:0.02em; color:var(--text); font-weight:600; text-decoration:none; padding:8px 0; }
+  .navlinks{ display:flex; gap:22px; margin:0; padding:0; list-style:none; }
   .navlinks a{
-    font-family:var(--mono); font-size:11.5px; letter-spacing:0.04em;
-    color:var(--text-dim); text-transform:uppercase;
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.04em;
+    color:var(--text-dim); text-transform:uppercase; text-decoration:none;
   }
-  .navlinks a:hover{ color:var(--accent); text-decoration:none; }
-  @media (max-width:700px){ .navlinks{ display:none; } }
+  .navlinks a:hover{ color:var(--accent); }
+  .menu-btn{
+    display:none; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.04em; text-transform:uppercase;
+    background:none; border:1px solid var(--border-strong); border-radius:3px;
+    color:var(--text); padding:0 12px; height:40px; cursor:pointer;
+  }
+  .menu-btn svg{ width:16px; height:16px; }
+  @media (max-width:760px){
+    .menu-btn{ display:inline-flex; }
+    .navlinks{
+      display:none; position:absolute; top:var(--nav-h); left:0; right:0;
+      flex-direction:column; gap:0; background:var(--bg-panel);
+      border-bottom:1px solid var(--border); box-shadow:0 8px 20px rgba(28,35,48,.08);
+    }
+    .navlinks.is-open{ display:flex; }
+    .navlinks a{ display:block; padding:14px 16px; font-size:13.5px; border-top:1px solid var(--border); }
+  }
 
   /* ---------- HERO ---------- */
-  header.hero{ border-bottom:1px solid var(--border); padding:56px 0 44px; }
-  .hero-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap:44px; align-items:center; }
-  @media (max-width:800px){ .hero-grid{ grid-template-columns:1fr; } }
+  header.hero{ border-bottom:1px solid var(--border); padding:52px 0 44px; }
+  .hero-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:44px; align-items:center; }
+  @media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; gap:32px; } header.hero{ padding:32px 0 36px; } }
 
+  .avatar-row{ display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+  .avatar{ width:64px; height:64px; border-radius:50%; object-fit:cover; border:1px solid var(--border-strong); background:var(--bg-subtle); flex-shrink:0; }
   .eyebrow{
-    font-family:var(--mono); font-size:12px; letter-spacing:0.08em;
-    color:var(--accent-2); text-transform:uppercase; margin:0 0 12px; font-weight:600;
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em;
+    color:var(--accent-2); text-transform:uppercase; margin:0; font-weight:600;
   }
+  .status{
+    display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap;
+    font-family:var(--mono); font-size:13px; color:var(--text);
+    border:1px solid #bcd9ca; background:#eef7f2; border-radius:999px;
+    padding:6px 14px 6px 12px; margin:0 0 18px;
+  }
+  @media (max-width:520px){ .status{ border-radius:6px; padding:8px 12px; gap:4px 10px; } }
+  .status-dot{ width:8px; height:8px; border-radius:50%; background:var(--ok); box-shadow:0 0 0 3px rgba(31,122,77,.18); flex-shrink:0; }
+  .status-label{ color:var(--ok); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; font-size:12px; }
   h1.title{
     font-family:var(--sans); font-weight:700;
-    font-size:clamp(26px, 3.4vw, 36px);
-    line-height:1.25; letter-spacing:-0.01em;
+    font-size:clamp(27px, 3.6vw, 38px);
+    line-height:1.2; letter-spacing:-0.015em;
     margin:0 0 16px; color:var(--text);
   }
-  p.lede{ font-size:15.5px; color:var(--text-dim); max-width:54ch; margin:0 0 22px; }
-  .cta-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; }
+  p.lede{ font-size:16px; color:var(--text-dim); max-width:56ch; margin:0 0 24px; }
+  .cta-row{ display:flex; gap:10px; flex-wrap:wrap; }
   .btn{
-    font-family:var(--mono); font-size:12px; letter-spacing:0.02em;
-    padding:10px 16px; border-radius:3px; border:1px solid var(--border-strong);
-    transition:all .15s ease; display:inline-flex; align-items:center; gap:6px;
-    background:var(--bg-panel); cursor:pointer;
+    font-family:var(--mono); font-size:13px; letter-spacing:0.02em; text-decoration:none;
+    min-height:44px; padding:0 18px; border-radius:3px; border:1px solid var(--border-strong);
+    transition:background-color .15s ease, border-color .15s ease, color .15s ease;
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--bg-panel); color:var(--text); cursor:pointer;
   }
   .btn-primary{ background:var(--accent); color:#fff; border-color:var(--accent); font-weight:500; }
-  .btn-primary:hover{ background:#16304f; text-decoration:none; }
-  .btn-ghost{ color:var(--text); }
-  .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); text-decoration:none; }
-
-  .badge{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:var(--mono); font-size:11.5px; letter-spacing:0.02em;
-    color:var(--text-dim); border:1px solid var(--border); background:var(--bg-subtle);
-    padding:7px 12px; border-radius:3px;
-  }
+  .btn-primary:hover{ background:var(--accent-hover); }
+  .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
 
   /* ---------- IK ARM DEMO ---------- */
   .arm-panel{ border:1px solid var(--border); background:var(--bg-panel); border-radius:4px; padding:14px; }
   .arm-caption{
-    display:flex; justify-content:space-between; align-items:baseline;
-    font-family:var(--mono); font-size:10px; letter-spacing:0.03em;
+    display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;
+    font-family:var(--mono); font-size:12px; letter-spacing:0.03em;
     color:var(--text-faint); text-transform:uppercase; margin-bottom:8px;
   }
-  .arm-readout{ font-family:var(--mono); font-size:11px; color:var(--accent-2); }
-  svg#armSvg{ width:100%; height:auto; display:block; touch-action:none; cursor:crosshair; }
-  .arm-hint{ font-family:var(--mono); font-size:10px; color:var(--text-faint); text-align:center; margin-top:6px; }
-  .arm-readout-sub{ font-family:var(--mono); font-size:10px; color:var(--text-faint); text-align:right; margin-top:4px; }
+  .arm-readout{ font-family:var(--mono); font-size:12px; color:var(--accent-2); text-transform:none; font-variant-numeric:tabular-nums; }
+  svg#armSvg{ width:100%; height:auto; display:block; touch-action:pan-y; cursor:crosshair; border-radius:3px; }
+  .arm-stats{
+    display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;
+    font-family:var(--mono); font-size:12px; color:var(--text-faint); margin-top:6px;
+    font-variant-numeric:tabular-nums;
+  }
+  .sing-flag{
+    font-size:12px; color:var(--warn); border:1px solid #e7c3ad; background:#fbf1ea;
+    padding:1px 8px; border-radius:3px; visibility:hidden;
+  }
+  .singularity .sing-flag{ visibility:visible; }
+  .singularity #armDet{ color:var(--warn); }
+  .arm-hint{ font-family:var(--mono); font-size:12px; color:var(--text-faint); margin:8px 0 0; }
   .arm-controls{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
   .arm-toggle-btn{
-    font-family:var(--mono); font-size:10.5px; letter-spacing:0.02em; color:var(--text-dim);
+    font-family:var(--mono); font-size:12px; letter-spacing:0.02em; color:var(--text-dim);
     background:var(--bg-subtle); border:1px solid var(--border); border-radius:3px;
-    padding:6px 10px; cursor:pointer; transition:all .15s ease;
+    min-height:36px; padding:0 12px; cursor:pointer;
+    transition:background-color .15s ease, border-color .15s ease, color .15s ease;
   }
   .arm-toggle-btn:hover{ border-color:var(--accent); color:var(--accent); }
   .arm-toggle-btn[aria-expanded="true"]{ background:var(--accent); color:#fff; border-color:var(--accent); }
   .arm-math{
-    margin-top:10px; padding:10px 12px; border:1px solid var(--border); border-radius:3px;
-    background:var(--bg-subtle); font-size:11.5px; color:var(--text-dim); line-height:1.55;
+    margin-top:10px; padding:12px 14px; border:1px solid var(--border); border-radius:3px;
+    background:var(--bg-subtle); font-size:13px; color:var(--text-dim); line-height:1.6;
   }
-  .arm-math p{ margin:0 0 6px; }
+  .arm-math p{ margin:0 0 8px; }
   .arm-math p:last-child{ margin-bottom:0; }
   .arm-math strong{ color:var(--text); }
-  .arm-link{ margin-top:8px; text-align:center; }
-  .arm-link a{ font-family:var(--mono); font-size:10.5px; }
-  .singularity .arm-readout{ color:#b3541e; }
 
   /* ---------- SECTIONS ---------- */
-  section{ padding:52px 0; border-bottom:1px solid var(--border); }
+  section{ padding:56px 0; border-bottom:1px solid var(--border); }
+  @media (max-width:520px){ section{ padding:44px 0; } }
   .section-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:26px; }
   .section-head h2{
-    font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em;
-    text-transform:uppercase; color:var(--text); margin:0; font-weight:600;
+    font-family:var(--mono); font-size:13px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--text); margin:0; font-weight:600; white-space:nowrap;
   }
   .section-head .rule{ flex:1; height:1px; background:var(--border); }
 
-  p.summary{ color:var(--text-dim); max-width:70ch; font-size:15px; }
+  p.summary{ color:var(--text-dim); max-width:70ch; font-size:16px; margin:0 0 14px; }
+  p.summary:last-child{ margin-bottom:0; }
   p.summary strong{ color:var(--text); font-weight:600; }
 
   /* ---------- CAROUSEL ---------- */
   .carousel{
-    position:relative; border-radius:4px 4px 0 0; overflow:hidden;
-    border-bottom:1px solid var(--border); background:var(--bg-subtle);
+    position:relative; overflow:hidden; aspect-ratio:2 / 1;
+    background:var(--bg-subtle); border-bottom:1px solid var(--border);
+    touch-action:pan-y;
   }
-  .carousel.carousel--lg{ aspect-ratio: 16 / 8; }
-  .carousel.carousel--sm{ aspect-ratio: 16 / 7; }
-  .carousel-track{ display:flex; height:100%; transition: transform .35s ease; }
-  .carousel-slide{ flex: 0 0 100%; height:100%; position:relative; }
-  .carousel-slide img{ width:100%; height:100%; object-fit:cover; display:none; }
-  .img-placeholder{
-    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    gap:8px; background:
-      repeating-linear-gradient(45deg, var(--bg-subtle), var(--bg-subtle) 10px, #eceef1 10px, #eceef1 20px);
-    border:1px dashed var(--border-strong);
-  }
-  .img-placeholder svg{ width:26px; height:26px; color:var(--text-faint); }
-  .img-placeholder .ph-label{ font-family:var(--mono); font-size:10.5px; color:var(--text-faint); text-align:center; }
-  .img-placeholder code{
-    display:inline-block; margin-top:2px; font-family:var(--mono); font-size:10.5px;
-    color:var(--accent-2); background:var(--bg-panel); border:1px solid var(--border);
-    padding:2px 6px; border-radius:3px;
-  }
+  .carousel-track{ display:flex; height:100%; transition:transform .35s ease; }
+  .carousel-slide{ flex:0 0 100%; height:100%; }
+  .carousel-slide img{ width:100%; height:100%; object-fit:cover; display:block; user-select:none; -webkit-user-drag:none; }
   .carousel-btn{
     position:absolute; top:50%; transform:translateY(-50%); z-index:2;
-    width:28px; height:28px; border-radius:50%; border:1px solid var(--border-strong);
-    background:rgba(255,255,255,0.9); color:var(--text); font-size:15px; line-height:1;
-    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    width:40px; height:40px; border-radius:50%; border:1px solid var(--border-strong);
+    background:rgba(255,255,255,0.94); color:var(--text);
+    display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0;
   }
+  .carousel-btn svg{ width:18px; height:18px; }
   .carousel-btn:hover{ background:#fff; border-color:var(--accent); color:var(--accent); }
-  .carousel-prev{ left:8px; }
-  .carousel-next{ right:8px; }
-  .carousel-dots{
-    position:absolute; bottom:8px; left:0; right:0; z-index:2;
-    display:flex; justify-content:center; gap:6px;
+  .carousel-prev{ left:10px; }
+  .carousel-next{ right:10px; }
+  .carousel-dots{ position:absolute; bottom:4px; left:0; right:0; z-index:2; display:flex; justify-content:center; gap:2px; }
+  .carousel-dot{ width:24px; height:24px; border:0; background:none; padding:0; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .carousel-dot::before{
+    content:''; width:9px; height:9px; border-radius:50%;
+    background:rgba(255,255,255,0.85); border:1px solid rgba(28,35,48,0.45);
   }
-  .carousel-dot{
-    width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.6);
-    border:1px solid rgba(28,35,48,0.25); cursor:pointer; padding:0;
-  }
-  .carousel-dot.is-active{ background:var(--accent); border-color:var(--accent); }
+  .carousel-dot[aria-current="true"]::before{ background:var(--accent); border-color:#fff; }
   .carousel-caption{
-    padding:8px 24px; font-family:var(--mono); font-size:11px; color:var(--text-faint);
-    border-bottom:1px solid var(--border); background:var(--bg-panel);
+    display:flex; justify-content:space-between; gap:12px;
+    padding:9px 24px; font-family:var(--mono); font-size:12px; color:var(--text-faint);
+    border-bottom:1px solid var(--border); background:var(--bg-panel); margin:0;
+  }
+  .carousel-count{ white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .carousel:focus-visible{ outline:2px solid var(--accent); outline-offset:-2px; }
+  @media (max-width:520px){
+    .carousel-btn{ width:36px; height:36px; }
+    .carousel-caption{ padding:9px 16px; }
   }
   .carousel-note{
     display:flex; align-items:flex-start; gap:10px; padding:14px 24px;
     border-bottom:1px solid var(--border); background:var(--bg-subtle);
-    font-size:13px; color:var(--text-dim);
+    font-size:14px; color:var(--text-dim);
   }
-  .carousel-note svg{ width:18px; height:18px; flex-shrink:0; color:var(--text-faint); margin-top:1px; }
+  .carousel-note svg{ width:18px; height:18px; flex-shrink:0; color:var(--text-faint); margin-top:2px; }
+  @media (max-width:520px){ .carousel-note{ padding:12px 16px; } }
 
-  /* ---------- CERTIFICATIONS ---------- */
-  .cert-block{ margin-top:16px; padding-top:14px; border-top:1px solid var(--border); }
-  .cert-label{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-faint); margin-bottom:8px; }
-  .cert-item{ font-size:14px; color:var(--text-dim); }
-  .cert-status{
-    font-family:var(--mono); font-size:10.5px; color:var(--accent-2); margin-left:8px;
-    border:1px solid var(--border); padding:2px 7px; border-radius:3px; background:var(--bg-subtle);
-  }
+  /* ---------- PROJECT CASE STUDIES ---------- */
+  .spec{ border:1px solid var(--border); background:var(--bg-panel); margin-bottom:20px; border-radius:4px; overflow:hidden; }
+  .spec-body{ padding:24px; }
+  @media (max-width:520px){ .spec-body{ padding:18px 16px; } }
+  .spec-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:6px 16px; flex-wrap:wrap; margin-bottom:16px; }
+  .spec-code{ font-family:var(--mono); font-size:12px; color:var(--accent-2); letter-spacing:0.03em; margin-bottom:6px; display:block; font-weight:600; }
+  .spec-title{ font-size:19px; line-height:1.35; font-weight:700; color:var(--text); margin:0; }
+  .spec-org{ font-size:14px; color:var(--text-dim); margin:4px 0 0; }
+  .spec-org strong{ color:var(--text); font-weight:600; }
+  .spec-meta{ font-family:var(--mono); font-size:12px; color:var(--text-faint); white-space:nowrap; padding-top:2px; }
 
-  /* ---------- AVATAR / HEADSHOT ---------- */
-  .avatar-row{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
-  .avatar{
-    position:relative; width:52px; height:52px; border-radius:50%; overflow:hidden;
-    border:1px solid var(--border-strong); flex-shrink:0; background:var(--bg-subtle);
-  }
-  .avatar img{ width:100%; height:100%; object-fit:cover; display:none; }
-  .avatar-placeholder{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    background: repeating-linear-gradient(45deg, var(--bg-subtle), var(--bg-subtle) 6px, #eceef1 6px, #eceef1 12px);
-  }
-  .avatar-placeholder svg{ width:22px; height:22px; color:var(--text-faint); }
+  .case{ margin:0 0 18px; }
+  .case-row{ display:grid; grid-template-columns:104px 1fr; gap:16px; padding:12px 0; border-top:1px solid var(--border); }
+  .case-row:first-child{ border-top:none; padding-top:0; }
+  .case dt{ font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent-2); font-weight:600; padding-top:2px; }
+  .case dd{ margin:0; color:var(--text-dim); font-size:15px; }
+  .case dd p{ margin:0; }
+  .case ul{ margin:0; padding-left:18px; }
+  .case li{ margin-bottom:6px; }
+  .case li:last-child{ margin-bottom:0; }
+  .case li::marker{ color:var(--accent-2); }
+  @media (max-width:600px){ .case-row{ grid-template-columns:1fr; gap:4px; } }
 
-  /* ---------- PROJECT SPEC SHEETS ---------- */
-  .spec{ border:1px solid var(--border); background:var(--bg-panel); margin-bottom:16px; border-radius:4px; overflow:hidden; }
-  .spec-body{ padding:22px 24px; }
-  .spec-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:4px; }
-  .spec-code{ font-family:var(--mono); font-size:11px; color:var(--accent-2); letter-spacing:0.03em; margin-bottom:6px; display:block; font-weight:600; }
-  .spec-title{ font-size:18px; font-weight:700; color:var(--text); margin:0; }
-  .spec-meta{ font-family:var(--mono); font-size:11px; color:var(--text-faint); text-align:right; white-space:nowrap; }
-  .spec-org{ font-size:13px; color:var(--text-dim); margin:2px 0 14px; }
-
-  .spec ul{ margin:0 0 16px; padding-left:18px; color:var(--text-dim); font-size:14.5px; }
-  .spec ul li{ margin-bottom:7px; }
-  .spec ul li::marker{ color:var(--accent-2); }
-
-  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
   .chip{
-    font-family:var(--mono); font-size:10.5px; letter-spacing:0.01em;
+    font-family:var(--mono); font-size:12px; letter-spacing:0.01em;
     color:var(--text-dim); border:1px solid var(--border); padding:4px 9px;
     border-radius:3px; background:var(--bg-subtle);
   }
 
+  .load-error{ border:1px solid var(--border); background:var(--bg-subtle); padding:16px 20px; border-radius:4px; color:var(--text-dim); font-size:15px; }
+
   /* ---------- ADDITIONAL EXPERIENCE ---------- */
-  .exp-card{ border:1px solid var(--border); background:var(--bg-panel); margin-bottom:14px; border-radius:4px; overflow:hidden; }
-  .exp-body{ padding:16px 20px; display:grid; grid-template-columns: 150px 1fr; gap:16px; }
-  @media (max-width:640px){ .exp-body{ grid-template-columns:1fr; } }
-  .exp-when{ font-family:var(--mono); font-size:11px; color:var(--text-faint); padding-top:2px; }
-  .exp-title{ font-weight:600; color:var(--text); font-size:14.5px; margin-bottom:2px; }
-  .exp-org{ font-family:var(--mono); font-size:11px; color:var(--accent-2); margin-bottom:6px; }
-  .exp-desc{ color:var(--text-dim); font-size:14px; }
+  .exp-card{ border:1px solid var(--border); background:var(--bg-panel); margin-bottom:14px; border-radius:4px; }
+  .exp-body{ padding:18px 20px; display:grid; grid-template-columns:150px 1fr; gap:16px; }
+  @media (max-width:640px){ .exp-body{ grid-template-columns:1fr; gap:6px; padding:16px; } }
+  .exp-when{ font-family:var(--mono); font-size:12px; color:var(--text-faint); padding-top:3px; }
+  .exp-title{ font-weight:600; color:var(--text); font-size:15.5px; margin:0 0 2px; }
+  .exp-org{ font-family:var(--mono); font-size:12.5px; color:var(--accent-2); margin-bottom:8px; }
+  .exp-context{ color:var(--text); font-size:15px; margin:0 0 6px; }
+  .exp-points{ margin:0; padding-left:18px; color:var(--text-dim); font-size:15px; }
+  .exp-points li{ margin-bottom:4px; }
+  .exp-points li::marker{ color:var(--accent-2); }
 
   /* ---------- SKILLS ---------- */
-  .skill-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--border); border-radius:4px; overflow:hidden; }
+  .skill-grid{ display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--border); border-radius:4px; overflow:hidden; }
   @media (max-width:700px){ .skill-grid{ grid-template-columns:1fr; } }
   .skill-cell{ padding:16px 20px; border-bottom:1px solid var(--border); border-right:1px solid var(--border); background:var(--bg-panel); }
   .skill-grid .skill-cell:nth-child(2n){ border-right:none; }
-  @media (max-width:700px){ .skill-cell{ border-right:none !important; } }
-  .skill-label{ font-family:var(--mono); font-size:10.5px; letter-spacing:0.05em; color:var(--text-faint); text-transform:uppercase; margin-bottom:6px; }
-  .skill-value{ font-size:14px; color:var(--text-dim); }
+  .skill-grid .skill-cell:nth-last-child(-n+2){ border-bottom:none; }
+  @media (max-width:700px){
+    .skill-cell{ border-right:none !important; }
+    .skill-grid .skill-cell:nth-last-child(2){ border-bottom:1px solid var(--border); }
+  }
+  .skill-label{ font-family:var(--mono); font-size:12px; letter-spacing:0.05em; color:var(--accent-2); text-transform:uppercase; margin:0 0 6px; font-weight:600; }
+  .skill-value{ font-size:15px; color:var(--text-dim); margin:0; }
 
   /* ---------- EDUCATION ---------- */
-  .edu-row{ display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-top:1px solid var(--border); flex-wrap:wrap; }
-  .edu-row:first-child{ border-top:none; }
-  .edu-school{ font-weight:600; font-size:14.5px; color:var(--text); }
-  .edu-degree{ font-size:13.5px; color:var(--text-dim); }
-  .edu-when{ font-family:var(--mono); font-size:11px; color:var(--text-faint); white-space:nowrap; }
+  .edu-row{ display:flex; justify-content:space-between; gap:6px 16px; padding:14px 0; border-top:1px solid var(--border); flex-wrap:wrap; }
+  .edu-row:first-child{ border-top:none; padding-top:0; }
+  .edu-school{ font-weight:600; font-size:15.5px; color:var(--text); margin:0; }
+  .edu-degree{ font-size:15px; color:var(--text-dim); margin:0; }
+  .edu-when{ font-family:var(--mono); font-size:12px; color:var(--text-faint); white-space:nowrap; padding-top:3px; }
+  .cert-block{ margin-top:16px; padding-top:14px; border-top:1px solid var(--border); }
+  .cert-label{ font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-faint); margin:0 0 8px; }
+  .cert-item{ font-size:15px; color:var(--text-dim); margin:0; }
+  .cert-status{
+    font-family:var(--mono); font-size:12px; color:var(--ok); margin-left:8px; white-space:nowrap;
+    border:1px solid #bcd9ca; padding:2px 7px; border-radius:3px; background:#eef7f2;
+  }
 
   /* ---------- RESUME ---------- */
   .resume-panel{ border:1px solid var(--border); background:var(--bg-panel); border-radius:4px; padding:20px; }
+  @media (max-width:520px){ .resume-panel{ padding:16px; } }
   .resume-top{ display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:16px; flex-wrap:wrap; }
-  .resume-top p{ color:var(--text-dim); font-size:14px; margin:0; max-width:50ch; }
-  .resume-frame-wrap{
-    border:1px solid var(--border); border-radius:4px; overflow:hidden; background:var(--bg-subtle);
-    aspect-ratio: 8.5 / 7;
-  }
+  .resume-top p{ color:var(--text-dim); font-size:15px; margin:0; max-width:50ch; }
+  .resume-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+  .resume-frame-wrap{ border:1px solid var(--border); border-radius:4px; overflow:hidden; background:var(--bg-subtle); height:min(80vh, 1000px); }
   .resume-frame-wrap iframe{ width:100%; height:100%; border:0; display:block; }
-  .resume-placeholder{
-    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
-    height:100%; text-align:center; padding:24px;
+  .resume-thumb{ display:none; text-decoration:none; color:var(--text-faint); }
+  .resume-thumb img{ display:block; width:100%; height:auto; border:1px solid var(--border); border-radius:4px; }
+  .resume-thumb span{ display:block; font-family:var(--mono); font-size:12px; text-align:center; margin-top:8px; }
+  @media (max-width:760px){
+    .resume-frame-wrap{ display:none; }
+    .resume-thumb{ display:block; }
   }
-  .resume-placeholder svg{ width:32px; height:32px; color:var(--text-faint); }
-  .resume-placeholder .ph-label{ font-family:var(--mono); font-size:11px; color:var(--text-faint); }
-  .resume-placeholder code{
-    font-family:var(--mono); font-size:11px; color:var(--accent-2); background:var(--bg-panel);
-    border:1px solid var(--border); padding:2px 6px; border-radius:3px;
-  }
-  #resumeFrame{ display:none; }
 
   /* ---------- FOOTER / CONTACT ---------- */
-  footer{ padding:52px 0 60px; }
-  .contact-block h2{ font-family:var(--mono); font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 14px; color:var(--text); }
-  .contact-block p{ color:var(--text-dim); max-width:46ch; font-size:14.5px; }
-  .contact-links{ display:flex; flex-direction:column; gap:8px; margin-top:14px; }
-  .contact-links a{ font-family:var(--mono); font-size:13px; }
-  .foot-signoff{ font-family:var(--mono); font-size:10.5px; color:var(--text-faint); margin-top:36px; }
+  footer{ padding:56px 0 64px; }
+  .contact-block h2{ font-family:var(--mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; margin:0 0 14px; color:var(--text); font-weight:600; }
+  .contact-block p{ color:var(--text-dim); max-width:52ch; font-size:16px; margin:0; }
+  .contact-links{ display:flex; flex-direction:column; align-items:flex-start; gap:4px; margin-top:16px; }
+  .contact-links a{ font-family:var(--mono); font-size:14px; padding:6px 0; }
+  .foot-signoff{ font-family:var(--mono); font-size:12px; color:var(--text-faint); margin-top:36px; }
 
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
@@ -308,353 +368,265 @@
 </head>
 <body>
 
-<nav class="topbar">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="topbar" aria-label="Primary">
   <div class="wrap">
-    <div class="brand">Avi Punjabi</div>
-    <div class="navlinks">
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <a class="brand" href="#top">Avi Punjabi</a>
+    <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
+    </button>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
 </nav>
 
-<header class="hero">
+<main id="main" tabindex="-1">
+
+<header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
       <div class="avatar-row">
-        <div class="avatar" id="avatarSlot">
-          <img id="avatarImg" alt="Photo of Avi Punjabi">
-          <div class="avatar-placeholder" id="avatarPlaceholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
-          </div>
-        </div>
-        <p class="eyebrow" style="margin:0;">Controls &amp; Mechatronics Engineer</p>
+        <img class="avatar" src="images/headshot-128.webp" srcset="images/headshot-128.webp 1x, images/headshot-256.webp 2x" width="64" height="64" alt="Headshot of Avi Punjabi" fetchpriority="high">
+        <p class="eyebrow">Controls &amp; Mechatronics Engineer</p>
       </div>
+      <p class="status" id="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-label">Status</span>
+        <span id="statusText">Seeking full-time roles starting Summer 2027</span>
+      </p>
       <h1 class="title">I build the control loops and sensor stacks that let hardware move on purpose.</h1>
-      <p class="lede">I'm an MEng student at UC Berkeley concentrating in Controls of Robotic and Autonomous Systems. My work spans inverse kinematics on the ISS's Canadarm2, real-time sensor fusion for suspension testing, and FEA-validated actuation hardware — I like teams that iterate quickly between design, simulation, and physical test.</p>
+      <p class="lede">I'm a mechanical engineer pursuing an MEng in Controls of Robotic and Autonomous Systems at UC Berkeley, and I'm currently an MRI &amp; robotics intern at Neuro42. I've written the inverse kinematics for a simulated Canadarm2, instrumented a solar car's suspension with a real-time sensor stack, and validated actuation hardware with FEA.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:avipunjabi10@gmail.com">Email Me</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/avi-punjabi/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-primary" href="mailto:avipunjabi10@gmail.com">Email me</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/avi-punjabi/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
+        <a class="btn btn-ghost" href="#resume">Resume</a>
       </div>
-      <div class="badge">MEng student, UC Berkeley — Controls of Robotic &amp; Autonomous Systems</div>
     </div>
 
-    <div class="arm-panel">
-      <div class="arm-caption">
+    <figure class="arm-panel" id="armPanel" style="margin:0;">
+      <figcaption class="arm-caption">
         <span>Fig. — 2-link inverse kinematics</span>
         <span class="arm-readout" id="armReadout">θ1 0.0° · θ2 0.0°</span>
+      </figcaption>
+      <svg id="armSvg" viewBox="0 0 360 300" tabindex="0" role="img"
+        aria-label="Interactive two-link robot arm. The arm solves inverse kinematics in real time to reach a target. Move the pointer over it, or focus it and use the arrow keys to move the target."
+        aria-describedby="armHint"></svg>
+      <div class="arm-stats">
+        <span>ẋ <span id="armVx">0.00</span> · ẏ <span id="armVy">0.00</span> m/s · <span id="armDet">det J 0.00 m²</span></span>
+        <span class="sing-flag" id="singFlag">near singularity</span>
       </div>
-      <svg id="armSvg" viewBox="0 0 360 300" role="img" aria-label="Interactive two-link robot arm demo. Move your cursor over it to see the arm follow via inverse kinematics."></svg>
-      <div class="arm-readout-sub" id="armReadoutSub" aria-live="polite">ẋ 0.0 · ẏ 0.0 (units/s) — via Jacobian</div>
+      <p class="arm-hint" id="armHint">Move your cursor over the figure, or click it and use the arrow keys. Near full stretch or full fold, det J → 0: the arm is near a singularity, where small end-effector moves demand large joint speeds.</p>
       <div class="arm-controls">
-        <button type="button" class="arm-toggle-btn" id="elbowToggle">Elbow: Down ⟲</button>
+        <button type="button" class="arm-toggle-btn" id="elbowToggle" aria-pressed="false">Elbow: down</button>
         <button type="button" class="arm-toggle-btn" id="mathToggle" aria-expanded="false" aria-controls="armMath">Show the math</button>
       </div>
       <div class="arm-math" id="armMath" hidden>
-        <p><strong>Position IK</strong> (law of cosines): solve θ2 from cosθ2 = (d² − L1² − L2²) / (2·L1·L2), then θ1 = atan2(dy,dx) − atan2(L2·sinθ2, L1 + L2·cosθ2).</p>
-        <p><strong>Velocity IK</strong> (Jacobian): ẋ = J(θ)·θ̇, where J is the 2×2 manipulator Jacobian. Inverting J maps a desired end-effector velocity to joint velocities — the same approach I used, extended to 7 DOF, for Canadarm2's velocity-level control.</p>
+        <p><strong>Position IK</strong> (law of cosines): cos θ2 = (d² − L1² − L2²) / (2·L1·L2), with the sign of θ2 picking elbow up or down; then θ1 = atan2(y, x) − atan2(L2·sin θ2, L1 + L2·cos θ2).</p>
+        <p><strong>Velocity</strong> (Jacobian): ẋ = J(θ)·θ̇, where J = [[−L1·s1 − L2·s12, −L2·s12], [L1·c1 + L2·c12, L2·c12]]. The readout multiplies the joint rates by this J every frame.</p>
+        <p><strong>Singularities</strong>: det J = L1·L2·sin θ2. When it approaches zero (arm straight or fully folded), J can't be inverted, so some end-effector directions become unreachable without very large joint speeds. Canadarm2 has the same problem in 7-DOF form, which is why its velocity IK has to handle near-singular poses.</p>
+        <p>Links are drawn at L1 = 1.10 m and L2 = 0.95 m.</p>
       </div>
-      <div class="arm-hint">move your cursor — the arm solves for it in real time · near full stretch it's close to a singularity, where small end-effector moves demand large joint speeds</div>
-    </div>
+    </figure>
   </div>
 </header>
 
-<section id="summary">
+<section id="summary" aria-labelledby="summary-h">
   <div class="wrap">
-    <div class="section-head"><h2>Summary</h2><div class="rule"></div></div>
+    <div class="section-head"><h2 id="summary-h">Summary</h2><div class="rule"></div></div>
     <p class="summary">
-      <strong>I'm an MEng student at UC Berkeley</strong> concentrating in Controls of Robotic and Autonomous Systems, and I spent three years before that doing hands-on hardware work at Texas A&amp;M across kinematics, sensor fusion, and mechanical design. I'm comfortable across the full stack of a hardware project — writing the control algorithm, building the test rig that validates it, and running the FEA that proves the part won't fail. I'm most drawn to small, fast-moving teams doing tight design-simulation-test loops, rather than pure CAD work or slower-moving organizations — early-stage robotics startups in particular.
+      <strong>I work across the full stack of a hardware project:</strong> deriving the control law, writing the firmware and dashboards that measure it, building the rig that tests it, and running the analysis that shows the part will hold.
+    </p>
+    <p class="summary">
+      At Texas A&amp;M I led robot-kinematics research for Canadarm2, ran data acquisition for a sensor-fused suspension test rig, and captained VEXU robotics teams through two international competitions. I'm now designing hardware at Neuro42 and Space Kinetic while I finish my MEng at Berkeley. I do my best work on small, fast-moving teams that run tight design–simulation–test loops, especially in robotics and autonomous systems, where controls, mechanics, and electronics all meet.
     </p>
   </div>
 </section>
 
-<section id="projects">
+<section id="projects" aria-labelledby="projects-h">
   <div class="wrap">
-    <div class="section-head"><h2>Featured Projects</h2><div class="rule"></div></div>
-
-    <article class="spec" id="canadarm2-ik">
-      <div class="carousel carousel--lg carousel-auto" data-prefix="images/canadarm2-" data-count="5" data-ext=".jpg" data-captions="Canadarm2 in Space Teams PRO|Canadarm2 Diagram w/ Rotation Axes|Sample Output of Inverse Kinematics|Sample Output of Velocity Inverse Kinematics|Canadarm2 on the ISS"></div>
-      <div class="spec-body">
-        <div class="spec-head">
-          <div>
-            <span class="spec-code">PROJ · CANADARM2-IK</span>
-            <h3 class="spec-title">Forward &amp; Inverse Kinematics for Canadarm2</h3>
-            <p class="spec-org">Robot Dynamics Subteam Lead — SpaceCraft VR Lab, Texas A&amp;M University</p>
-          </div>
-          <div class="spec-meta">08/2025 – 05/2026</div>
-        </div>
-        <ul>
-          <li>I developed forward and velocity-level inverse kinematics for a simulated Canadarm2, the ISS's robotic arm, using Jacobian-based control for closed-loop end-effector motion.</li>
-          <li>I integrated the control algorithms into the Space Teams PRO simulation platform and validated performance against mission scenarios.</li>
-          <li>I compiled my findings into a poster and presented it to faculty and industry judges at the AggiE_Challenge Research Expo.</li>
-        </ul>
-        <div class="chip-row">
-          <span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Jacobian IK</span><span class="chip">Robot Kinematics</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="spec">
-      <div class="carousel carousel--lg carousel-auto" data-prefix="images/suspension-daq-" data-count="3" data-ext=".jpg" data-captions="Suspension Tester Prototype|Real-Time Dashboard|Sensor Wiring Diagram"></div>
-      <div class="spec-body">
-        <div class="spec-head">
-          <div>
-            <span class="spec-code">PROJ · SUSPENSION-DAQ</span>
-            <h3 class="spec-title">Multi-Sensor DAQ for a Single-Wheel Suspension Tester</h3>
-            <p class="spec-org">Data Acquisition &amp; Processing Lead — Capstone Project, Texas A&amp;M University</p>
-          </div>
-          <div class="spec-meta">08/2025 – 05/2026</div>
-        </div>
-        <ul>
-          <li>I engineered a multi-sensor DAQ system fusing IMUs, load cells, and strain gauges into a real-time dashboard for continuous state estimation of suspension performance.</li>
-          <li>I built and validated a single-wheel tester capable of controlled dynamic and static loading to characterize wheel response under representative driving conditions.</li>
-          <li>I wrote the SOPs and safety protocols that governed rig operation, and managed the project budget and vendor sourcing.</li>
-        </ul>
-        <div class="chip-row">
-          <span class="chip">Sensor Fusion</span><span class="chip">IMU / Load Cell / Strain Gauge</span><span class="chip">Real-Time Dashboards</span><span class="chip">Test Rig Design</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="spec">
-      <div class="carousel carousel--lg carousel-auto" data-prefix="images/vexu-" data-count="1" data-ext=".jpg" data-captions="Aggie Robotics Competition Robots for VEXU World Championships"></div>
-      <div class="spec-body">
-        <div class="spec-head">
-          <div>
-            <span class="spec-code">PROJ · AGGIE-ROBOTICS-VEXU</span>
-            <h3 class="spec-title">VEXU Competition Robots &amp; Flywheel Turret</h3>
-            <p class="spec-org">Team Lead · Treasurer · Underclassman Representative — Aggie Robotics, Texas A&amp;M University</p>
-          </div>
-          <div class="spec-meta">08/2022 – 06/2025</div>
-        </div>
-        <ul>
-          <li>I directed the team through two international VEXU Robotics competitions, coordinating testing, logistics, and budgeting to keep our robots competition-ready.</li>
-          <li>I modeled and simulated 40+ dynamic and static robot components in CAD/FEA to verify structural integrity before fabrication.</li>
-          <li>I directed development of a two-axis motorized flywheel turret assembly, applying a hybrid Gantt/Agile framework to keep design and build milestones on schedule.</li>
-          <li>I restructured our testing process to run concurrently with hardware and software development, shortening the overall iteration cycle.</li>
-        </ul>
-        <div class="chip-row">
-          <span class="chip">CAD / FEA</span><span class="chip">Robot Design</span><span class="chip">Team Leadership</span><span class="chip">Agile / Gantt Planning</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="spec">
-      <div class="carousel-note">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v5M11.25 16.25h1.5v1.5h-1.5z"/><circle cx="12" cy="12" r="9"/></svg>
-        <span>Photos from this internship aren't shown here — Acutronic's work is proprietary and I'm not able to display it publicly.</span>
-      </div>
-      <div class="spec-body">
-        <div class="spec-head">
-          <div>
-            <span class="spec-code">PROJ · ACUTRONIC-FEA</span>
-            <h3 class="spec-title">Actuation Hardware Modeling &amp; Validation</h3>
-            <p class="spec-org">Mechanical Design Intern — Acutronic Actuation Inc., Austin, TX</p>
-          </div>
-          <div class="spec-meta">05/2025 – 08/2025</div>
-        </div>
-        <ul>
-          <li>I modeled 20+ mechanism and actuation components across motors, actuators, gearboxes, and test stands, standardizing interfaces to cut integration rework.</li>
-          <li>I ran FEA, thermal, and CFD simulations on 50+ components and assemblies in ANSYS to validate structural and thermal performance before fabrication.</li>
-          <li>I automated testing and data-analysis workflows in Python, cutting turnaround time and improving reproducibility across the design team.</li>
-        </ul>
-        <div class="chip-row">
-          <span class="chip">ANSYS FEA / CFD / Thermal</span><span class="chip">SolidWorks</span><span class="chip">Python Automation</span>
-        </div>
-      </div>
-    </article>
+    <div class="section-head"><h2 id="projects-h">Featured Work</h2><div class="rule"></div></div>
+    <div id="projectList" aria-busy="true">
+      <noscript><p class="load-error">Project details need JavaScript to display. You can read the same work in my <a href="Avi_Punjabi_Resume.pdf">resume (PDF)</a>.</p></noscript>
+    </div>
   </div>
 </section>
 
-<section id="experience">
+<section id="experience" aria-labelledby="experience-h">
   <div class="wrap">
-    <div class="section-head"><h2>Additional Experience</h2><div class="rule"></div></div>
-
-    <article class="exp-card">
-      <div class="exp-body">
-        <div class="exp-when">05/2023 – 05/2026</div>
-        <div>
-          <div class="exp-title">Suspension, Steering, Wheels &amp; Brakes Subteam Member</div>
-          <div class="exp-org">Texas A&amp;M Solar Car Racing</div>
-          <div class="exp-desc">I spent three years engineering braking and wheel-assembly components from CAD through simulation and physical testing, and defended my designs in formal reviews before faculty and industry judges.</div>
-        </div>
-      </div>
-    </article>
-
-    <article class="exp-card">
-      <div class="exp-body">
-        <div class="exp-when">08/2024 – 04/2025</div>
-        <div>
-          <div class="exp-title">Student Research Assistant</div>
-          <div class="exp-org">INVENT Lab, Texas A&amp;M University</div>
-          <div class="exp-desc">I ran tribology experiments on electro-adhesion, humidity, and temperature effects on friction and wear, and migrated the lab's analysis codebase into a unified MATLAB/Python pipeline.</div>
-        </div>
-      </div>
-    </article>
-
-    <article class="exp-card">
-      <div class="exp-body">
-        <div class="exp-when">02/2024 – 02/2025</div>
-        <div>
-          <div class="exp-title">Deloitte Leadership Allyship &amp; Mentorship Program</div>
-          <div class="exp-org">Texas A&amp;M Cohort</div>
-          <div class="exp-desc">I participated in a mentorship program emphasizing networking, professional development, and case study experience.</div>
-        </div>
-      </div>
-    </article>
-
-    <article class="exp-card">
-      <div class="exp-body">
-        <div class="exp-when">05/2023 – 07/2024</div>
-        <div>
-          <div class="exp-title">Student Research Assistant</div>
-          <div class="exp-org">Olivia Health — Texas A&amp;M School of Nursing, Bryan, TX</div>
-          <div class="exp-desc">I optimized and refined a natural language processing AI model for maternal healthcare applications, developed a full-stack website with AI integration for the research program, and conducted quantitative research with 500+ participants comparing rounds of UAT testing.</div>
-        </div>
-      </div>
-    </article>
-
-    <article class="exp-card">
-      <div class="exp-body">
-        <div class="exp-when">08/2020 – 05/2021</div>
-        <div>
-          <div class="exp-title">Researcher, First Author</div>
-          <div class="exp-org">Honors Mentor Connection, Plymouth, MN</div>
-          <div class="exp-desc">I published astrophysics research through the Research Notes of the American Astronomical Society, analyzing infrared spectroscopy data from the Spitzer Space Telescope with Python (Jupyter Notebook).</div>
-        </div>
-      </div>
-    </article>
+    <div class="section-head"><h2 id="experience-h">Additional Experience</h2><div class="rule"></div></div>
+    <div id="experienceList" aria-busy="true"></div>
   </div>
 </section>
 
-<section id="skills">
+<section id="skills" aria-labelledby="skills-h">
   <div class="wrap">
-    <div class="section-head"><h2>Skills</h2><div class="rule"></div></div>
+    <div class="section-head"><h2 id="skills-h">Skills</h2><div class="rule"></div></div>
     <div class="skill-grid">
       <div class="skill-cell">
-        <div class="skill-label">Controls &amp; Autonomy</div>
-        <div class="skill-value">Control system design, robot kinematics &amp; dynamics, Jacobian-based velocity control, Kalman filtering &amp; sensor fusion, reinforcement learning</div>
+        <h3 class="skill-label">Controls &amp; Autonomy</h3>
+        <p class="skill-value">Control system design, robot kinematics &amp; dynamics, Jacobian-based velocity control, Kalman filtering &amp; sensor fusion, reinforcement learning</p>
       </div>
       <div class="skill-cell">
-        <div class="skill-label">Simulation &amp; Perception</div>
-        <div class="skill-value">MuJoCo, OpenCV, Docker, sim-based validation</div>
+        <h3 class="skill-label">Simulation &amp; Perception</h3>
+        <p class="skill-value">MuJoCo, OpenCV, Docker, simulation-based validation</p>
       </div>
       <div class="skill-cell">
-        <div class="skill-label">Software</div>
-        <div class="skill-value">C++, Python, ROS2, MATLAB, Git &amp; Linux</div>
+        <h3 class="skill-label">Software</h3>
+        <p class="skill-value">C++, Python, ROS2, MATLAB, Git &amp; Linux</p>
       </div>
       <div class="skill-cell">
-        <div class="skill-label">Embedded &amp; Electronics</div>
-        <div class="skill-value">ESP32 &amp; STM32 programming, CAN Bus, I2C, SPI, UART/Serial, circuit design &amp; signal conditioning</div>
+        <h3 class="skill-label">Embedded &amp; Electronics</h3>
+        <p class="skill-value">ESP32, STM32 &amp; Teensy programming, CAN Bus, I2C, SPI, UART/Serial, circuit design &amp; signal conditioning</p>
       </div>
       <div class="skill-cell">
-        <div class="skill-label">Hardware &amp; Test</div>
-        <div class="skill-value">DAQ systems, real-time data acquisition, testing &amp; validation design</div>
+        <h3 class="skill-label">Hardware &amp; Test</h3>
+        <p class="skill-value">Real-time data acquisition &amp; visualization, test rig design, testing &amp; validation planning, failure-mode documentation</p>
       </div>
       <div class="skill-cell">
-        <div class="skill-label">Design &amp; Analysis</div>
-        <div class="skill-value">SolidWorks, AutoCAD, Siemens NX, ANSYS FEA/CFD/thermal, GD&amp;T, FMEA</div>
+        <h3 class="skill-label">Design &amp; Analysis</h3>
+        <p class="skill-value">SolidWorks, Siemens NX, AutoCAD, ANSYS FEA/CFD/thermal, tolerance analysis, GD&amp;T, DFMEA</p>
       </div>
       <div class="skill-cell">
-        <div class="skill-label">Fabrication</div>
-        <div class="skill-value">CNC, water jet, plasma cutting, sheet metal (SendCutSend), angle grinding</div>
+        <h3 class="skill-label">Fabrication &amp; Prototyping</h3>
+        <p class="skill-value">3D printing, CNC, water jet, plasma cutting, sheet metal (SendCutSend), pneumatic &amp; electromechanical assembly</p>
       </div>
       <div class="skill-cell">
-        <div class="skill-label">Process</div>
-        <div class="skill-value">Design reviews, SOPs &amp; safety protocols, vendor sourcing, budget management</div>
+        <h3 class="skill-label">Process</h3>
+        <p class="skill-value">Trade studies, formal design reviews, SOPs &amp; safety protocols, vendor sourcing, budget management</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="education">
+<section id="education" aria-labelledby="education-h">
   <div class="wrap">
-    <div class="section-head"><h2>Education</h2><div class="rule"></div></div>
+    <div class="section-head"><h2 id="education-h">Education</h2><div class="rule"></div></div>
     <div class="edu-row">
       <div>
-        <div class="edu-school">University of California, Berkeley</div>
-        <div class="edu-degree">M.Eng. Mechanical Engineering — Concentration in Controls of Robotic and Autonomous Systems</div>
+        <h3 class="edu-school">University of California, Berkeley</h3>
+        <p class="edu-degree">M.Eng. Mechanical Engineering — Concentration in Controls of Robotic and Autonomous Systems</p>
       </div>
       <div class="edu-when">08/2026 – 05/2027</div>
     </div>
     <div class="edu-row">
       <div>
-        <div class="edu-school">Texas A&amp;M University</div>
-        <div class="edu-degree">B.S. Mechanical Engineering, Minor in Computer Science</div>
+        <h3 class="edu-school">Texas A&amp;M University</h3>
+        <p class="edu-degree">B.S. Mechanical Engineering, Minor in Computer Science</p>
       </div>
       <div class="edu-when">08/2022 – 05/2026</div>
     </div>
     <div class="cert-block">
-      <div class="cert-label">Certifications</div>
-      <div class="cert-item">Fundamentals of Engineering (FE) — Mechanical <span class="cert-status">Passed</span></div>
+      <h3 class="cert-label">Certifications</h3>
+      <p class="cert-item">Fundamentals of Engineering (FE) — Mechanical <span class="cert-status">Passed</span></p>
     </div>
   </div>
 </section>
 
-<section id="resume">
+<section id="resume" aria-labelledby="resume-h">
   <div class="wrap">
-    <div class="section-head"><h2>Resume</h2><div class="rule"></div></div>
+    <div class="section-head"><h2 id="resume-h">Resume</h2><div class="rule"></div></div>
     <div class="resume-panel">
       <div class="resume-top">
-        <p>Preview or download my full resume as a PDF.</p>
-        <a class="btn btn-primary" href="Avi_Punjabi_Resume.pdf" download>Download PDF</a>
-      </div>
-      <div class="resume-frame-wrap">
-        <iframe id="resumeFrame" title="Avi Punjabi resume preview" src="Avi_Punjabi_Resume.pdf"></iframe>
-        <div class="resume-placeholder" id="resumePlaceholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 16h6M9 10h2"/></svg>
-          <div class="ph-label">No resume uploaded yet</div>
-          <code>Avi_Punjabi_Resume.pdf</code>
+        <p>My full resume as a one-page PDF.</p>
+        <div class="resume-actions">
+          <a class="btn btn-ghost" href="Avi_Punjabi_Resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+          <a class="btn btn-primary" href="Avi_Punjabi_Resume.pdf" download>Download PDF</a>
         </div>
       </div>
+      <div class="resume-frame-wrap">
+        <iframe title="Avi Punjabi resume (PDF preview)" src="Avi_Punjabi_Resume.pdf#view=FitH" loading="lazy"></iframe>
+      </div>
+      <a class="resume-thumb" href="Avi_Punjabi_Resume.pdf" target="_blank" rel="noopener">
+        <img src="images/resume-preview.webp" width="900" height="1165" loading="lazy" decoding="async" alt="First page of Avi Punjabi's resume">
+        <span>Tap to open the full PDF</span>
+      </a>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer id="contact">
   <div class="wrap">
     <div class="contact-block">
       <h2>Get in touch</h2>
-      <p>I'm open to roles on hardware-focused robotics teams — controls, mechatronics, or autonomous systems work in particular. Feel free to reach out.</p>
+      <p>I'm looking for full-time roles on hardware-focused robotics teams starting Summer 2027, particularly in controls, mechatronics, or autonomous systems. I'd love to hear what you're building.</p>
       <div class="contact-links">
         <a href="mailto:avipunjabi10@gmail.com">avipunjabi10@gmail.com</a>
         <a href="https://www.linkedin.com/in/avi-punjabi/" target="_blank" rel="noopener">linkedin.com/in/avi-punjabi</a>
       </div>
     </div>
-    <div class="foot-signoff">Berkeley, California</div>
+    <p class="foot-signoff">Berkeley, California</p>
   </div>
 </footer>
 
 <script>
+/* ---------------- MOBILE NAV ---------------- */
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  function setOpen(open){
+    links.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
+  btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+  links.addEventListener('click', e => { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true'){ setOpen(false); btn.focus(); }
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('nav.topbar')) setOpen(false);
+  });
+})();
+
 /* ---------------- IK ARM DEMO ---------------- */
 (function(){
   const svg = document.getElementById('armSvg');
-  const panel = svg.closest('.arm-panel');
+  const panel = document.getElementById('armPanel');
   const readout = document.getElementById('armReadout');
-  const readoutSub = document.getElementById('armReadoutSub');
+  const vxEl = document.getElementById('armVx');
+  const vyEl = document.getElementById('armVy');
+  const detEl = document.getElementById('armDet');
+  const hint = document.getElementById('armHint');
   const elbowToggle = document.getElementById('elbowToggle');
   const mathToggle = document.getElementById('mathToggle');
   const armMath = document.getElementById('armMath');
   const ns = 'http://www.w3.org/2000/svg';
-  const W = 360, H = 300;
+
+  // Geometry in SVG pixels (y points down). 100 px = 1 m for the readouts.
+  const W = 360, H = 300, PX_PER_M = 100;
   const base = { x: 70, y: 230 };
   const L1 = 110, L2 = 95;
+  const MARGIN = 0.5;                     // keep targets just inside the workspace boundary
+  const minR = Math.abs(L1 - L2) + MARGIN, maxR = L1 + L2 - MARGIN;
+  const SING_THRESHOLD = 0.2;             // |sin θ2| below this = near singularity
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let elbowSign = -1; // -1 = elbow down, +1 = elbow up (sign on theta2 in law-of-cosines solution)
+  const coarse = window.matchMedia('(pointer: coarse)').matches;
+  let elbowSign = -1;                     // -1 = elbow down, +1 = elbow up (in the y-up frame)
+
+  if (coarse){
+    hint.textContent = 'Tap the figure, or drag sideways across it, to move the target. Near full stretch or full fold, det J → 0: the arm is near a singularity, where small end-effector moves demand large joint speeds.';
+  }
 
   elbowToggle.addEventListener('click', function(){
     elbowSign *= -1;
-    elbowToggle.textContent = 'Elbow: ' + (elbowSign === -1 ? 'Down ⟲' : 'Up ⟳');
+    const up = elbowSign === 1;
+    elbowToggle.textContent = 'Elbow: ' + (up ? 'up' : 'down');
+    elbowToggle.setAttribute('aria-pressed', String(up));
   });
-
   mathToggle.addEventListener('click', function(){
-    const isOpen = armMath.hasAttribute('hidden') === false;
-    if (isOpen) { armMath.setAttribute('hidden', ''); mathToggle.setAttribute('aria-expanded', 'false'); }
-    else { armMath.removeAttribute('hidden'); mathToggle.setAttribute('aria-expanded', 'true'); }
+    const open = armMath.hidden;
+    armMath.hidden = !open;
+    mathToggle.setAttribute('aria-expanded', String(open));
+    mathToggle.textContent = open ? 'Hide the math' : 'Show the math';
   });
 
   function el(tag, attrs){
@@ -662,62 +634,71 @@
     for (const k in attrs) e.setAttribute(k, attrs[k]);
     return e;
   }
-
-  const envelope = el('circle', {
-    cx: base.x, cy: base.y, r: L1 + L2,
-    fill: 'none', stroke: '#e2e4e9', 'stroke-width': 1, 'stroke-dasharray': '3 5'
-  });
-  svg.appendChild(envelope);
-
-  const baseMount = el('rect', { x: base.x - 14, y: base.y - 6, width: 28, height: 34, rx: 2,
-    fill: '#f3f4f6', stroke: '#c9cdd6', 'stroke-width': 1 });
-  svg.appendChild(baseMount);
-
-  const link1 = el('line', { stroke: '#3f7c74', 'stroke-width': 5, 'stroke-linecap': 'round' });
-  const link2 = el('line', { stroke: '#1f3a5f', 'stroke-width': 5, 'stroke-linecap': 'round' });
-  svg.appendChild(link1);
-  svg.appendChild(link2);
-
+  svg.appendChild(el('rect', { x: 0, y: 0, width: W, height: H, fill: 'transparent' }));
+  svg.appendChild(el('circle', { cx: base.x, cy: base.y, r: L1 + L2, fill: 'none', stroke: '#d5d8df', 'stroke-width': 1, 'stroke-dasharray': '3 5' }));
+  svg.appendChild(el('circle', { cx: base.x, cy: base.y, r: Math.abs(L1 - L2), fill: 'none', stroke: '#d5d8df', 'stroke-width': 1, 'stroke-dasharray': '2 4' }));
+  svg.appendChild(el('rect', { x: base.x - 14, y: base.y - 6, width: 28, height: 34, rx: 2, fill: '#f3f4f6', stroke: '#c9cdd6', 'stroke-width': 1 }));
+  const reachLine = el('line', { stroke: '#9a4515', 'stroke-width': 1, 'stroke-dasharray': '2 3', opacity: 0 });
+  const link1 = el('line', { stroke: '#3f7c74', 'stroke-width': 6, 'stroke-linecap': 'round' });
+  const link2 = el('line', { stroke: '#1f3a5f', 'stroke-width': 6, 'stroke-linecap': 'round' });
   const j0 = el('circle', { cx: base.x, cy: base.y, r: 6, fill: '#1c2330' });
   const j1 = el('circle', { r: 5, fill: '#1c2330' });
   const eff = el('circle', { r: 7, fill: 'none', stroke: '#1f3a5f', 'stroke-width': 2 });
-  svg.appendChild(j0); svg.appendChild(j1); svg.appendChild(eff);
+  const targetMark = el('circle', { r: 4, fill: '#3f7c74' });
+  const font = { 'font-size': 12, 'font-family': 'IBM Plex Mono, monospace', fill: '#666d7c' };
+  const label1 = el('text', Object.assign({ x: base.x + 18, y: base.y + 22 }, font)); label1.textContent = 'θ1';
+  const label2 = el('text', font); label2.textContent = 'θ2';
+  [reachLine, link1, link2, j0, j1, eff, targetMark, label1, label2].forEach(n => svg.appendChild(n));
 
-  const label1 = el('text', { x: base.x - 4, y: base.y + 22, 'font-size': 11, 'font-family': 'IBM Plex Mono, monospace', fill: '#8a91a0' });
-  label1.textContent = 'θ1';
-  const label2 = el('text', { 'font-size': 11, 'font-family': 'IBM Plex Mono, monospace', fill: '#8a91a0' });
-  label2.textContent = 'θ2';
-  svg.appendChild(label1); svg.appendChild(label2);
-
-  const targetMark = el('circle', { r: 3, fill: '#3f7c74', opacity: 0.7 });
-  svg.appendChild(targetMark);
-
-  let target = { x: base.x + 150, y: base.y - 80 };
+  const target = { x: base.x + 150, y: base.y - 80 };
 
   function solveIK(tx, ty){
     let dx = tx - base.x, dy = ty - base.y;
     let d = Math.hypot(dx, dy);
-    const minR = Math.abs(L1 - L2) + 4;
-    const maxR = L1 + L2 - 4;
-    if (d < minR) { const s = minR / (d || 1); dx *= s; dy *= s; d = minR; }
-    if (d > maxR) { const s = maxR / d; dx *= s; dy *= s; d = maxR; }
-
-    const angleToTarget = Math.atan2(dy, dx);
-    let cosT2 = (d*d - L1*L1 - L2*L2) / (2 * L1 * L2);
-    cosT2 = Math.max(-1, Math.min(1, cosT2));
-    const theta2 = elbowSign * Math.acos(cosT2);
-    const theta1 = angleToTarget - Math.atan2(L2 * Math.sin(theta2), L1 + L2 * Math.cos(theta2));
-
-    return { theta1, theta2, tx: base.x + dx, ty: base.y + dy, d };
+    if (d < minR){ const s = minR / (d || 1); dx *= s; dy *= s; d = minR; }
+    if (d > maxR){ const s = maxR / d; dx *= s; dy *= s; d = maxR; }
+    const c2 = Math.max(-1, Math.min(1, (d*d - L1*L1 - L2*L2) / (2 * L1 * L2)));
+    const th2 = elbowSign * Math.acos(c2);
+    const th1 = Math.atan2(dy, dx) - Math.atan2(L2 * Math.sin(th2), L1 + L2 * Math.cos(th2));
+    return { th1, th2, cx: base.x + dx, cy: base.y + dy, clamped: Math.hypot(tx - base.x - dx, ty - base.y - dy) > 1 };
   }
 
-  let lastEf = null, lastT = null;
+  // Wrap an angle difference to (-π, π] so the shoulder takes the short way round.
+  function wrap(a){ return Math.atan2(Math.sin(a), Math.cos(a)); }
 
-  function draw(sol){
-    const j1x = base.x + L1 * Math.cos(sol.theta1);
-    const j1y = base.y + L1 * Math.sin(sol.theta1);
-    const efx = j1x + L2 * Math.cos(sol.theta1 + sol.theta2);
-    const efy = j1y + L2 * Math.sin(sol.theta1 + sol.theta2);
+  const init = solveIK(target.x, target.y);
+  const q = { th1: init.th1, th2: init.th2 };           // rendered joint state
+  let vxF = 0, vyF = 0, lastT = null, lastReadout = 0;
+
+  function frame(now){
+    const sol = solveIK(target.x, target.y);
+    const dt = lastT ? Math.min((now - lastT) / 1000, 0.1) : 0;
+    lastT = now;
+
+    const prev1 = q.th1, prev2 = q.th2;
+    if (reduceMotion){ q.th1 = sol.th1; q.th2 = sol.th2; }
+    else {
+      // First-order joint-space tracking toward the IK solution (frame-rate independent).
+      const k = 1 - Math.exp(-dt * 8);
+      q.th1 += wrap(sol.th1 - q.th1) * k;
+      // θ2 is not wrapped: it stays in (−π, π], so an elbow flip swings through the straight pose (θ2 = 0)
+      // like a real joint, instead of folding through ±180°.
+      q.th2 += (sol.th2 - q.th2) * k;
+    }
+
+    const s1 = Math.sin(q.th1), c1 = Math.cos(q.th1);
+    const s12 = Math.sin(q.th1 + q.th2), c12 = Math.cos(q.th1 + q.th2);
+    const j1x = base.x + L1 * c1, j1y = base.y + L1 * s1;
+    const efx = j1x + L2 * c12, efy = j1y + L2 * s12;
+
+    // End-effector velocity = J(θ) · θ̇, using the actual joint rates this frame.
+    if (dt > 0){
+      const w1 = wrap(q.th1 - prev1) / dt, w2 = (q.th2 - prev2) / dt;
+      const vx = (-L1 * s1 - L2 * s12) * w1 + (-L2 * s12) * w2;
+      const vy = ( L1 * c1 + L2 * c12) * w1 + ( L2 * c12) * w2;
+      const a = 1 - Math.exp(-dt * 10);   // light smoothing so the numbers are readable
+      vxF += (vx - vxF) * a; vyF += (vy - vyF) * a;
+    }
 
     link1.setAttribute('x1', base.x); link1.setAttribute('y1', base.y);
     link1.setAttribute('x2', j1x); link1.setAttribute('y2', j1y);
@@ -725,186 +706,252 @@
     link2.setAttribute('x2', efx); link2.setAttribute('y2', efy);
     j1.setAttribute('cx', j1x); j1.setAttribute('cy', j1y);
     eff.setAttribute('cx', efx); eff.setAttribute('cy', efy);
-    targetMark.setAttribute('cx', sol.tx); targetMark.setAttribute('cy', sol.ty);
-    label2.setAttribute('x', j1x + 8); label2.setAttribute('y', j1y - 8);
+    label2.setAttribute('x', j1x + 9); label2.setAttribute('y', j1y - 9);
+    targetMark.setAttribute('cx', target.x); targetMark.setAttribute('cy', target.y);
+    targetMark.setAttribute('fill', sol.clamped ? '#9a4515' : '#3f7c74');
+    reachLine.setAttribute('x1', sol.cx); reachLine.setAttribute('y1', sol.cy);
+    reachLine.setAttribute('x2', target.x); reachLine.setAttribute('y2', target.y);
+    reachLine.setAttribute('opacity', sol.clamped ? 0.8 : 0);
 
-    const d1 = (sol.theta1 * 180 / Math.PI).toFixed(1);
-    const d2 = (sol.theta2 * 180 / Math.PI).toFixed(1);
-    readout.textContent = 'θ1 ' + d1 + '° · θ2 ' + d2 + '°';
+    // Singularity measure: det J = L1·L2·sin θ2.
+    const sinT2 = Math.sin(q.th2);
+    panel.classList.toggle('singularity', Math.abs(sinT2) < SING_THRESHOLD);
 
-    // Finite-difference end-effector velocity, standing in for J(θ)·θ̇ over one frame.
-    const now = performance.now();
-    if (lastEf && lastT){
-      const dt = (now - lastT) / 1000;
-      if (dt > 0){
-        const vx = (efx - lastEf.x) / dt;
-        const vy = (efy - lastEf.y) / dt;
-        readoutSub.textContent = 'ẋ ' + vx.toFixed(0) + ' · ẏ ' + vy.toFixed(0) + ' (px/s) — via Jacobian';
-      }
+    // Text readouts at ~12 Hz. Displayed in the conventional y-up frame (angles CCW-positive).
+    if (now - lastReadout > 80){
+      lastReadout = now;
+      const deg = r => (-r * 180 / Math.PI);
+      readout.textContent = 'θ1 ' + deg(wrap(q.th1)).toFixed(1) + '° · θ2 ' + deg(q.th2).toFixed(1) + '°';
+      vxEl.textContent = fmt(vxF / PX_PER_M);
+      vyEl.textContent = fmt(-vyF / PX_PER_M);
+      detEl.textContent = 'det J ' + Math.abs(L1 * L2 * sinT2 / (PX_PER_M * PX_PER_M)).toFixed(2) + ' m²';
     }
-    lastEf = { x: efx, y: efy }; lastT = now;
-
-    // Near-singularity when the target sits close to full stretch or full fold.
-    const maxR = L1 + L2 - 4, minR = Math.abs(L1 - L2) + 4;
-    const nearSingularity = sol.d !== undefined && (sol.d > maxR - 12 || sol.d < minR + 12);
-    panel.classList.toggle('singularity', !!nearSingularity);
   }
+  function fmt(v){ const s = Math.abs(v) < 0.005 ? 0 : v; return (s < 0 ? '−' : ' ') + Math.abs(s).toFixed(2); }
 
-  const initSol = solveIK(target.x, target.y);
-  let lerpState = { theta1: initSol.theta1, theta2: initSol.theta2 };
-
-  function animate(){
-    const sol = solveIK(target.x, target.y);
-    if (reduceMotion) {
-      draw(sol);
-    } else {
-      lerpState.theta1 += (sol.theta1 - lerpState.theta1) * 0.12;
-      lerpState.theta2 += (sol.theta2 - lerpState.theta2) * 0.12;
-      draw({ theta1: lerpState.theta1, theta2: lerpState.theta2, tx: sol.tx, ty: sol.ty, d: sol.d });
-    }
-    requestAnimationFrame(animate);
+  // ----- Input -----
+  let idle = !reduceMotion, idleTimer = null, idleT0 = 0, pointerDown = false;
+  function wake(){ idle = false; clearTimeout(idleTimer); }
+  function sleepSoon(){
+    clearTimeout(idleTimer);
+    if (reduceMotion) return;
+    idleTimer = setTimeout(() => { idle = true; idleT0 = performance.now(); }, 2500);
   }
-
-  function setTargetFromEvent(clientX, clientY){
+  function setTargetFromEvent(e){
     const rect = svg.getBoundingClientRect();
-    const scaleX = W / rect.width, scaleY = H / rect.height;
-    target.x = (clientX - rect.left) * scaleX;
-    target.y = (clientY - rect.top) * scaleY;
+    target.x = (e.clientX - rect.left) * (W / rect.width);
+    target.y = (e.clientY - rect.top) * (H / rect.height);
   }
-
-  svg.addEventListener('pointermove', function(e){
-    setTargetFromEvent(e.clientX, e.clientY);
-    idle = false;
+  svg.addEventListener('pointerdown', e => { pointerDown = true; wake(); setTargetFromEvent(e); });
+  svg.addEventListener('pointermove', e => {
+    if (e.pointerType === 'mouse' || pointerDown){ wake(); setTargetFromEvent(e); }
   });
-  svg.addEventListener('pointerdown', function(){ idle = false; });
+  ['pointerup', 'pointercancel'].forEach(t => svg.addEventListener(t, () => { pointerDown = false; if (coarse) sleepSoon(); }));
+  svg.addEventListener('pointerleave', () => { pointerDown = false; sleepSoon(); });
+  svg.addEventListener('keydown', e => {
+    const step = e.shiftKey ? 24 : 8;
+    const moves = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] };
+    if (!moves[e.key]) return;
+    e.preventDefault(); wake();
+    target.x = Math.max(0, Math.min(W, target.x + moves[e.key][0]));
+    target.y = Math.max(0, Math.min(H, target.y + moves[e.key][1]));
+  });
+  svg.addEventListener('blur', sleepSoon);
 
-  let idle = true;
-  let t0 = performance.now();
-  function idleSweep(now){
-    if (idle) {
-      const t = (now - t0) / 1000;
+  // ----- Loop (paused while off-screen or in a background tab) -----
+  let visible = true, rafId = null;
+  function loop(now){
+    if (idle){
+      const t = (now - idleT0) / 1000;
       const ang = Math.sin(t * 0.6) * 0.9;
-      const rad = 150 + Math.sin(t * 0.3) * 20;
+      const rad = 150 + Math.sin(t * 0.3) * 40;
       target.x = base.x + Math.cos(ang) * rad;
-      target.y = base.y - 60 - Math.sin(ang) * 40;
+      target.y = base.y - 60 - Math.sin(ang) * 60;
     }
-    requestAnimationFrame(idleSweep);
+    frame(now);
+    rafId = visible ? requestAnimationFrame(loop) : null;
+  }
+  function start(){ if (rafId === null){ lastT = null; rafId = requestAnimationFrame(loop); } }
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      if (visible) start();
+    }).observe(svg);
+  }
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && visible) start(); });
+  start();
+})();
+
+/* ---------------- CONTENT (data/content.json) ---------------- */
+(function(){
+  const IMG_WIDTHS = [640, 960, 1440, 1920];
+  const SIZES = '(max-width: 1008px) calc(100vw - 50px), 910px';
+
+  // Small DOM builder; text always goes through textContent, so JSON can't inject HTML.
+  function h(tag, attrs, children){
+    const e = document.createElement(tag);
+    if (attrs) for (const k in attrs){
+      if (attrs[k] === null || attrs[k] === undefined) continue;
+      if (k === 'text') e.textContent = attrs[k];
+      else e.setAttribute(k, attrs[k]);
+    }
+    (children || []).forEach(c => { if (c) e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
+    return e;
+  }
+  function svgIcon(path){
+    const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('fill', 'none');
+    s.setAttribute('stroke', 'currentColor'); s.setAttribute('stroke-width', '1.8');
+    s.setAttribute('aria-hidden', 'true');
+    s.innerHTML = path;
+    return s;
   }
 
-  requestAnimationFrame(idleSweep);
-  animate();
-})();
+  function buildCarousel(project){
+    const imgs = project.images;
+    const n = imgs.length;
+    const frag = document.createDocumentFragment();
+    const region = h('div', {
+      class: 'carousel',
+      role: n > 1 ? 'region' : null,
+      'aria-roledescription': n > 1 ? 'carousel' : null,
+      'aria-label': n > 1 ? project.title + ' — photos (use left and right arrow keys)' : null,
+      tabindex: n > 1 ? '0' : null
+    });
+    const track = h('div', { class: 'carousel-track' });
+    imgs.forEach((im, i) => {
+      const srcset = IMG_WIDTHS.map(w => 'images/' + im.file + '-' + w + '.webp ' + w + 'w').join(', ');
+      const img = h('img', {
+        src: 'images/' + im.file + '-960.webp', srcset: srcset, sizes: SIZES,
+        width: '1920', height: '960', alt: im.alt || im.caption || '',
+        loading: 'lazy', decoding: 'async', draggable: 'false'
+      });
+      track.appendChild(h('div', {
+        class: 'carousel-slide',
+        role: n > 1 ? 'group' : null,
+        'aria-roledescription': n > 1 ? 'slide' : null,
+        'aria-label': n > 1 ? (i + 1) + ' of ' + n : null,
+        'aria-hidden': i === 0 ? null : 'true'
+      }, [img]));
+    });
+    region.appendChild(track);
 
-/* ---------------- IMAGE CAROUSELS ---------------- */
-(function(){
-  const placeholderIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>';
+    const captionText = h('span', { text: imgs[0].caption || '' });
+    const count = h('span', { class: 'carousel-count', 'aria-hidden': 'true', text: n > 1 ? '1 / ' + n : '' });
+    const caption = h('p', { class: 'carousel-caption', 'aria-live': n > 1 ? 'polite' : null }, [captionText, count]);
 
-  function buildCarousel(container){
-    const prefix = container.getAttribute('data-prefix');
-    const ext = container.getAttribute('data-ext') || '.jpg';
-    const count = parseInt(container.getAttribute('data-count'), 10) || 1;
-    const captions = (container.getAttribute('data-captions') || '').split('|');
+    if (n > 1){
+      const prev = h('button', { type: 'button', class: 'carousel-btn carousel-prev', 'aria-label': 'Previous photo' }, [svgIcon('<path d="M15 6l-6 6 6 6"/>')]);
+      const next = h('button', { type: 'button', class: 'carousel-btn carousel-next', 'aria-label': 'Next photo' }, [svgIcon('<path d="M9 6l6 6-6 6"/>')]);
+      const dots = h('div', { class: 'carousel-dots' });
+      const dotEls = imgs.map((im, i) => {
+        const d = h('button', { type: 'button', class: 'carousel-dot', 'aria-label': 'Show photo ' + (i + 1) + ': ' + (im.caption || ''), 'aria-current': i === 0 ? 'true' : 'false' });
+        dots.appendChild(d);
+        return d;
+      });
+      region.appendChild(prev); region.appendChild(next); region.appendChild(dots);
 
-    const track = document.createElement('div');
-    track.className = 'carousel-track';
+      let index = 0;
+      const slides = track.children;
+      function goTo(i){
+        index = (i + n) % n;
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        for (let k = 0; k < n; k++){
+          if (k === index) slides[k].removeAttribute('aria-hidden'); else slides[k].setAttribute('aria-hidden', 'true');
+          dotEls[k].setAttribute('aria-current', String(k === index));
+        }
+        captionText.textContent = imgs[index].caption || '';
+        count.textContent = (index + 1) + ' / ' + n;
+      }
+      prev.addEventListener('click', () => goTo(index - 1));
+      next.addEventListener('click', () => goTo(index + 1));
+      dotEls.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+      region.addEventListener('keydown', e => {
+        const map = { ArrowLeft: index - 1, ArrowRight: index + 1, Home: 0, End: n - 1 };
+        if (!(e.key in map)) return;
+        e.preventDefault();
+        goTo(map[e.key]);
+      });
 
-    const slides = [];
-    for (let i = 1; i <= count; i++){
-      const src = prefix + i + ext;
-      const slide = document.createElement('div');
-      slide.className = 'carousel-slide';
-
-      const img = document.createElement('img');
-      img.alt = 'Project photo ' + i;
-
-      const placeholder = document.createElement('div');
-      placeholder.className = 'img-placeholder';
-      placeholder.innerHTML = placeholderIcon +
-        '<div class="ph-label">Add photo</div><code>' + src + '</code>';
-
-      slide.appendChild(img);
-      slide.appendChild(placeholder);
-      track.appendChild(slide);
-      slides.push({ img, placeholder });
-
-      const tester = new Image();
-      tester.onload = function(){ img.src = src; img.style.display = 'block'; placeholder.style.display = 'none'; };
-      tester.onerror = function(){ /* keep placeholder visible */ };
-      tester.src = src;
+      // Swipe: horizontal drags change slides; vertical drags still scroll the page (touch-action: pan-y).
+      let sx = null, sy = null;
+      region.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse'){ sx = e.clientX; sy = e.clientY; } });
+      region.addEventListener('pointerup', e => {
+        if (sx === null) return;
+        const dx = e.clientX - sx, dy = e.clientY - sy;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2) goTo(index + (dx < 0 ? 1 : -1));
+        sx = null;
+      });
+      region.addEventListener('pointercancel', () => { sx = null; });
     }
-
-    const prevBtn = document.createElement('button');
-    prevBtn.className = 'carousel-btn carousel-prev';
-    prevBtn.setAttribute('aria-label', 'Previous image');
-    prevBtn.innerHTML = '&#8249;';
-
-    const nextBtn = document.createElement('button');
-    nextBtn.className = 'carousel-btn carousel-next';
-    nextBtn.setAttribute('aria-label', 'Next image');
-    nextBtn.innerHTML = '&#8250;';
-
-    const dots = document.createElement('div');
-    dots.className = 'carousel-dots';
-    const dotEls = [];
-    for (let i = 0; i < count; i++){
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
-      dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
-      dots.appendChild(dot);
-      dotEls.push(dot);
-    }
-
-    container.appendChild(track);
-    if (count > 1){
-      container.appendChild(prevBtn);
-      container.appendChild(nextBtn);
-      container.appendChild(dots);
-    }
-
-    const captionEl = document.createElement('div');
-    captionEl.className = 'carousel-caption';
-    container.insertAdjacentElement('afterend', captionEl);
-
-    let index = 0;
-    function goTo(i){
-      index = (i + count) % count;
-      track.style.transform = 'translateX(-' + (index * 100) + '%)';
-      dotEls.forEach((d, di) => d.classList.toggle('is-active', di === index));
-      captionEl.textContent = captions[index] || ('Caption for photo ' + (index + 1));
-    }
-    prevBtn.addEventListener('click', () => goTo(index - 1));
-    nextBtn.addEventListener('click', () => goTo(index + 1));
-    dotEls.forEach((d, di) => d.addEventListener('click', () => goTo(di)));
-    captionEl.textContent = captions[0] || 'Caption for photo 1';
+    frag.appendChild(region);
+    frag.appendChild(caption);
+    return frag;
   }
 
-  document.querySelectorAll('.carousel-auto').forEach(buildCarousel);
-})();
+  function buildProject(p){
+    const art = h('article', { class: 'spec', id: p.id, 'aria-labelledby': p.id + '-title' });
+    if (p.images && p.images.length) art.appendChild(buildCarousel(p));
+    else if (p.imageNote) art.appendChild(h('div', { class: 'carousel-note' }, [
+      svgIcon('<circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16.5v.5"/>'),
+      h('span', { text: p.imageNote })
+    ]));
 
-/* ---------------- HEADSHOT ---------------- */
-(function(){
-  const img = document.getElementById('avatarImg');
-  const placeholder = document.getElementById('avatarPlaceholder');
-  if (!img) return;
-  const src = 'images/headshot.jpg';
-  const tester = new Image();
-  tester.onload = function(){ img.src = src; img.style.display = 'block'; placeholder.style.display = 'none'; };
-  tester.onerror = function(){ /* keep placeholder visible */ };
-  tester.src = src;
-})();
+    const head = h('div', { class: 'spec-head' }, [
+      h('div', null, [
+        h('span', { class: 'spec-code', text: p.code }),
+        h('h3', { class: 'spec-title', id: p.id + '-title', text: p.title }),
+        h('p', { class: 'spec-org' }, [h('strong', { text: p.role }), ' — ' + p.org])
+      ]),
+      h('div', { class: 'spec-meta', text: p.dates })
+    ]);
 
-/* ---------------- RESUME PREVIEW CHECK ---------------- */
-(function(){
-  const frame = document.getElementById('resumeFrame');
-  const placeholder = document.getElementById('resumePlaceholder');
-  fetch('Avi_Punjabi_Resume.pdf', { method: 'HEAD', cache: 'no-store' })
-    .then(function(res){
-      if (res.ok){
-        frame.style.display = 'block';
-        placeholder.style.display = 'none';
+    const rows = [];
+    if (p.problem) rows.push(['Challenge', h('p', { text: p.problem })]);
+    if (p.approach && p.approach.length) rows.push(['Approach', h('ul', null, p.approach.map(a => h('li', { text: a })))]);
+    if (p.outcome) rows.push(['Outcome', h('p', { text: p.outcome })]);
+    const dl = h('dl', { class: 'case' }, rows.map(r => h('div', { class: 'case-row' }, [h('dt', { text: r[0] }), h('dd', null, [r[1]])])));
+
+    const chips = h('ul', { class: 'chip-row', 'aria-label': 'Tools and skills' }, (p.tags || []).map(t => h('li', { class: 'chip', text: t })));
+    art.appendChild(h('div', { class: 'spec-body' }, [head, dl, chips]));
+    return art;
+  }
+
+  function buildExperience(x){
+    return h('article', { class: 'exp-card' }, [
+      h('div', { class: 'exp-body' }, [
+        h('div', { class: 'exp-when', text: x.dates }),
+        h('div', null, [
+          h('h3', { class: 'exp-title', text: x.title }),
+          h('div', { class: 'exp-org', text: x.org }),
+          x.context ? h('p', { class: 'exp-context', text: x.context }) : null,
+          (x.points && x.points.length) ? h('ul', { class: 'exp-points' }, x.points.map(t => h('li', { text: t }))) : null
+        ])
+      ])
+    ]);
+  }
+
+  const projectList = document.getElementById('projectList');
+  const experienceList = document.getElementById('experienceList');
+
+  fetch('data/content.json')
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      if (data.status) document.getElementById('statusText').textContent = data.status;
+      else document.getElementById('status').hidden = true;
+      (data.projects || []).forEach(p => projectList.appendChild(buildProject(p)));
+      (data.experience || []).forEach(x => experienceList.appendChild(buildExperience(x)));
+      // If the page was opened with a #hash that points into rendered content, jump to it now.
+      if (location.hash){
+        const t = document.getElementById(location.hash.slice(1));
+        if (t && (projectList.contains(t) || experienceList.contains(t))) t.scrollIntoView();
       }
     })
-    .catch(function(){ /* keep placeholder visible */ });
+    .catch(() => {
+      const msg = () => h('p', { class: 'load-error' }, ['These details couldn’t load. The same work is in my ', h('a', { href: 'Avi_Punjabi_Resume.pdf', text: 'resume (PDF)' }), '.']);
+      projectList.appendChild(msg());
+    })
+    .finally(() => { projectList.removeAttribute('aria-busy'); experienceList.removeAttribute('aria-busy'); });
 })();
 </script>
 
