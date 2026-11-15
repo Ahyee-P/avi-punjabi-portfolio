@@ -308,6 +308,7 @@
   .exp-points{ margin:0; padding-left:18px; color:var(--text-dim); font-size:15px; }
   .exp-points li{ margin-bottom:4px; }
   .exp-points li::marker{ color:var(--accent-2); }
+  .exp-link{ margin:10px 0 0; font-family:var(--mono); font-size:13px; }
 
   /* ---------- SKILLS ---------- */
   .skill-grid{ display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--border); border-radius:4px; overflow:hidden; }
@@ -925,7 +926,10 @@
           h('h3', { class: 'exp-title', text: x.title }),
           h('div', { class: 'exp-org', text: x.org }),
           x.context ? h('p', { class: 'exp-context', text: x.context }) : null,
-          (x.points && x.points.length) ? h('ul', { class: 'exp-points' }, x.points.map(t => h('li', { text: t }))) : null
+          (x.points && x.points.length) ? h('ul', { class: 'exp-points' }, x.points.map(t => h('li', { text: t }))) : null,
+          (x.link && x.link.url) ? h('p', { class: 'exp-link' }, [
+            h('a', { href: x.link.url, target: '_blank', rel: 'noopener', text: (x.link.label || 'Link') + ' ↗' })
+          ]) : null
         ])
       ])
     ]);

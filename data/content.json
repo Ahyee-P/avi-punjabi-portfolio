@@ -1,8 +1,6 @@
 {
-  "_readme": "Edit this file to update the site. 'status' is the pill at the top of the page. 'projects' are the featured case studies, shown in the order listed. 'experience' is the Additional Experience list. Each project's 'images' list names files in /images: for an entry with file 'canadarm2-1', the site loads canadarm2-1-640.webp, -960, -1440 and -1920 (all 2:1). Leave 'images' empty and set 'imageNote' for work whose photos can't be shown.",
-
+  "_readme": "Edit this file to update the site. 'status' is the pill at the top of the page. 'projects' are the featured case studies, shown in the order listed. 'experience' is the Additional Experience list. Each project's 'images' list names files in /images: for an entry with file 'canadarm2-1', the site loads canadarm2-1-640.webp, -960, -1440 and -1920 (all 2:1). Leave 'images' empty and set 'imageNote' for work whose photos can't be shown. An experience entry can also take an optional 'link': {\"label\": ..., \"url\": ...}.",
   "status": "Seeking full-time roles starting Summer 2027",
-
   "projects": [
     {
       "id": "neuro42",
@@ -20,48 +18,88 @@
         "Working directly with the mechanical, electrical, embedded, and software teams to integrate MRI-compatible hardware."
       ],
       "outcome": "I run hardware tests and document failure modes, results, and fixes, which feed straight into the next design iteration. Those iterations have resolved system-integration issues and improved overall product reliability.",
-      "tags": ["CAD & Drawings", "3D Printing", "Pneumatics", "Electromechanical Integration", "Failure Analysis"]
+      "tags": [
+        "CAD & Drawings",
+        "3D Printing",
+        "Pneumatics",
+        "Electromechanical Integration",
+        "Failure Analysis"
+      ]
     },
     {
       "id": "space-kinetic",
       "code": "PROJ · SPACE-KINETIC",
       "title": "Automated Payload Reload Mechanism for a Reusable Spacecraft",
       "role": "Mechanical Design Engineer",
-      "org": "Space Kinetic, Berkeley, CA",
+      "org": "UC Berkeley MEng Capstone, sponsored by Space Kinetic",
       "dates": "09/2026 – Present",
       "images": [],
-      "imageNote": "Photos and CAD from this project aren't shown — Space Kinetic's work is proprietary.",
-      "problem": "A reusable spacecraft needs to reload its payload automatically, and every reload has to land in a repeatable, precise alignment.",
+      "imageNote": "Photos and CAD from this project aren't shown — the work is under NDA with Space Kinetic.",
+      "problem": "Space Kinetic needs a reusable spacecraft payload-deployment system to reload itself quickly and automatically. The mechanism has to keep mechanical complexity low by reusing existing actuation and positioning hardware, while delivering accurate, repeatable payload alignment and staying robust in both ground testing and operation.",
       "approach": [
         "Led trade studies weighing complexity, alignment accuracy, and robustness; we chose a design that reuses existing actuation instead of adding new actuators.",
         "Modeled the mechanism in SolidWorks and ran MATLAB motion, load, and tolerance analyses to verify it meets the alignment specs.",
         "Performed a Design FMEA of the full reload sequence to surface jam, misalignment, and single-point-failure risks early."
       ],
       "outcome": "I presented the resulting design changes to Space Kinetic's CTO and engineering experts in formal design reviews. The work is ongoing.",
-      "tags": ["SolidWorks", "MATLAB", "Tolerance Analysis", "Trade Studies", "DFMEA"]
+      "tags": [
+        "Mechanism Design",
+        "SolidWorks",
+        "MATLAB",
+        "Tolerance Analysis",
+        "Trade Studies",
+        "DFMEA"
+      ]
     },
     {
       "id": "canadarm2-ik",
       "code": "PROJ · CANADARM2-IK",
       "title": "Forward & Inverse Kinematics for Canadarm2",
-      "role": "Robot Dynamics Subteam Lead",
+      "role": "Robot Dynamics Subteam Lead (team of 6)",
       "org": "SpaceCraft VR Lab, Texas A&M University",
       "dates": "08/2025 – 05/2026",
       "images": [
-        { "file": "canadarm2-1", "caption": "Canadarm2 running in the Space Teams PRO simulator", "alt": "Screenshot of the Space Teams PRO simulator showing a white Canadarm2 model extended from a spacecraft against a black sky." },
-        { "file": "canadarm2-2", "caption": "Canadarm2 joint diagram with rotation axes θ1–θ7", "alt": "Line drawing of the seven-joint Canadarm2 with a labeled coordinate frame and rotation angle θ1 through θ7 at each joint, plus the camera and gripper at the end." },
-        { "file": "canadarm2-3", "caption": "Position IK: arm moving from its initial pose (black) to a target (green)", "alt": "3D plot of the arm's initial pose in black and its final pose in green, with the end effector reaching a red target point." },
-        { "file": "canadarm2-4", "caption": "Velocity IK: end effector tracking a curved path", "alt": "3D plot in meters of a blue multi-link arm whose end effector follows a dashed red curved trajectory." },
-        { "file": "canadarm2-5", "caption": "The real Canadarm2 on the ISS", "alt": "Photo of Canadarm2 on the International Space Station, bent into a V shape above Earth with clouds and solar arrays visible." }
+        {
+          "file": "canadarm2-1",
+          "caption": "Canadarm2 running in the Space Teams PRO simulator",
+          "alt": "Screenshot of the Space Teams PRO simulator showing a white Canadarm2 model extended from a spacecraft against a black sky."
+        },
+        {
+          "file": "canadarm2-2",
+          "caption": "Canadarm2 joint diagram with rotation axes θ1–θ7",
+          "alt": "Line drawing of the seven-joint Canadarm2 with a labeled coordinate frame and rotation angle θ1 through θ7 at each joint, plus the camera and gripper at the end."
+        },
+        {
+          "file": "canadarm2-3",
+          "caption": "Position IK: arm moving from its initial pose (black) to a target (green)",
+          "alt": "3D plot of the arm's initial pose in black and its final pose in green, with the end effector reaching a red target point."
+        },
+        {
+          "file": "canadarm2-4",
+          "caption": "Velocity IK: end effector tracking a curved path",
+          "alt": "3D plot in meters of a blue multi-link arm whose end effector follows a dashed red curved trajectory."
+        },
+        {
+          "file": "canadarm2-5",
+          "caption": "The real Canadarm2 on the ISS",
+          "alt": "Photo of Canadarm2 on the International Space Station, bent into a V shape above Earth with clouds and solar arrays visible."
+        }
       ],
       "problem": "Our lab needed a simulated Canadarm2, the ISS's 7-joint robotic arm, that could be commanded by where its end effector should go rather than by individual joint angles.",
       "approach": [
         "Derived the forward kinematics that map Canadarm2's joint states to end-effector pose.",
         "Implemented position-level and velocity-level inverse kinematics, using the manipulator Jacobian for closed-loop end-effector tracking.",
+        "Resolved the arm's redundancy (7 joints for a 6-DOF task) with secondary optimization objectives, such as minimizing motion time and energy consumption, to choose among the many joint solutions for a given end-effector goal.",
         "Integrated the control algorithms into the Space Teams PRO simulator and validated them against mission scenarios."
       ],
-      "outcome": "The arm tracked commanded end-effector targets accurately in closed loop. I presented the work as a research poster to faculty and industry judges at the AggiE_Challenge Research Expo.",
-      "tags": ["Python", "MATLAB", "Jacobian IK", "Robot Kinematics", "Simulation"]
+      "outcome": "I led a six-person subteam to a simulated arm that tracks commanded end-effector targets in closed loop. I presented the work as a research poster to faculty and industry judges at the AggiE_Challenge Research Expo.",
+      "tags": [
+        "Python",
+        "MATLAB",
+        "Jacobian IK",
+        "Robot Kinematics",
+        "Simulation"
+      ]
     },
     {
       "id": "suspension-daq",
@@ -71,18 +109,37 @@
       "org": "Senior Capstone sponsored by Texas A&M Solar Car Racing",
       "dates": "08/2025 – 05/2026",
       "images": [
-        { "file": "suspension-daq-1", "caption": "The single-wheel suspension tester", "alt": "Black steel test frame holding a single wheel and suspension assembly, photographed on a white background." },
-        { "file": "suspension-daq-2", "caption": "Live Python monitoring dashboard during an impact event", "alt": "Dark-themed dashboard titled Suspension Monitor with time-series plots of displacement, control-arm bending strain, load cell force, impact acceleration and chassis vibration, plus a bar chart of impact events." },
-        { "file": "suspension-daq-3", "caption": "Sensor wiring schematic for the Teensy 4.1 DAQ", "alt": "Wiring schematic connecting a Teensy 4.1 microcontroller to strain-gauge amplifiers, time-of-flight sensors and IMU breakout boards." }
+        {
+          "file": "suspension-daq-1",
+          "caption": "The single-wheel suspension tester",
+          "alt": "Black steel test frame holding a single wheel and suspension assembly, photographed on a white background."
+        },
+        {
+          "file": "suspension-daq-2",
+          "caption": "Live Python monitoring dashboard during an impact event",
+          "alt": "Dark-themed dashboard titled Suspension Monitor with time-series plots of displacement, control-arm bending strain, load cell force, impact acceleration and chassis vibration, plus a bar chart of impact events."
+        },
+        {
+          "file": "suspension-daq-3",
+          "caption": "Sensor wiring schematic for the Teensy 4.1 DAQ",
+          "alt": "Wiring schematic connecting a Teensy 4.1 microcontroller to strain-gauge amplifiers, time-of-flight sensors and IMU breakout boards."
+        }
       ],
       "problem": "Texas A&M Solar Car Racing sponsored our capstone to characterize how their double-wishbone suspension responds under representative driving loads, which meant measuring it under controlled conditions.",
       "approach": [
-        "Built and validated a single-wheel suspension tester that applies controlled static and dynamic loads.",
-        "Wrote Teensy 4.1 firmware reading HX711 strain-gauge amplifiers, VL53L1X time-of-flight distance sensors, and MPU-6050 / LSM303DLHC IMUs.",
-        "Built a Python live-monitoring dashboard that fuses the sensor streams for real-time state estimation of suspension performance."
+        "Built and validated a single-wheel suspension tester that applies controlled static loads up to about 2 g (350 lbf) and dynamic impact loads up to about 3 g (500 lbf).",
+        "Wrote Teensy 4.1 firmware sampling at 100 Hz from HX711 strain-gauge amplifiers, VL53L1X time-of-flight distance sensors, and MPU-6050 / LSM303DLHC IMUs.",
+        "Built a Python live-monitoring dashboard that fuses the sensor streams with a Kalman filter for real-time state estimation of suspension performance."
       ],
-      "outcome": "We delivered a validated test rig plus real-time instrumentation for displacement, control-arm strain, load, and vibration. I also wrote the rig's SOPs and safety protocols and kept the project within its budget through vendor sourcing.",
-      "tags": ["Teensy 4.1", "Embedded Firmware", "Sensor Fusion", "Python Dashboards", "Test Rig Design"]
+      "outcome": "The measured data validated the team's earlier suspension simulations, confirming the suspension will support the car as designed. I also wrote the rig's SOPs and safety protocols and kept the project within budget through vendor sourcing.",
+      "tags": [
+        "Teensy 4.1",
+        "Embedded Firmware",
+        "Kalman Filter",
+        "Sensor Fusion",
+        "Python Dashboards",
+        "Test Rig Design"
+      ]
     },
     {
       "id": "acutronic-fea",
@@ -99,8 +156,13 @@
         "Ran FEA, thermal, and CFD simulations in ANSYS on 50+ assemblies to validate designs before fabrication.",
         "Worked with machinists and engineers to evaluate manufacturability and confirm designs met tolerances."
       ],
-      "outcome": "I automated test-data analysis in Python, which cut the team's analysis turnaround time. I also documented the testing and analysis procedures so results stay reproducible across the design team.",
-      "tags": ["ANSYS FEA / CFD / Thermal", "SolidWorks", "DFM", "Python Automation"]
+      "outcome": "I automated the test-data analysis pipeline in Python, cutting turnaround from multiple hours to about 30 minutes. I also documented the testing and analysis procedures so results stay reproducible across the design team.",
+      "tags": [
+        "ANSYS FEA / CFD / Thermal",
+        "SolidWorks",
+        "DFM",
+        "Python Automation"
+      ]
     },
     {
       "id": "aggie-robotics-vexu",
@@ -110,7 +172,11 @@
       "org": "Aggie Robotics, Texas A&M University",
       "dates": "08/2022 – 06/2025",
       "images": [
-        { "file": "vexu-1", "caption": "Team WHOOP's VEXU robots with our engineering notebook", "alt": "Three Aggie Robotics VEXU competition robots with red and blue accents on carpet, next to a Team WHOOP engineering notebook bearing the Texas A&M logo." }
+        {
+          "file": "vexu-1",
+          "caption": "Team WHOOP's VEXU robots with our engineering notebook",
+          "alt": "Three Aggie Robotics VEXU competition robots with red and blue accents on carpet, next to a Team WHOOP engineering notebook bearing the Texas A&M logo."
+        }
       ],
       "problem": "A student team had to design, build, and test competitive robots for international VEXU championships on a fixed season timeline and budget.",
       "approach": [
@@ -118,11 +184,15 @@
         "Directed development of a two-axis motorized flywheel turret, using a hybrid Gantt/Agile plan to keep design and build milestones on schedule.",
         "Restructured testing to run in parallel with hardware and software development instead of after it."
       ],
-      "outcome": "I led the team through two international VEXU competitions, handling testing, logistics, and budgeting. Running tests in parallel shortened our overall iteration cycle.",
-      "tags": ["CAD / FEA", "Robot Design", "Team Leadership", "Agile / Gantt Planning"]
+      "outcome": "We placed in the top 5 internationally every year. I led the team through two international VEXU competitions, handling testing, logistics, and budgeting, and running tests in parallel shortened our overall iteration cycle.",
+      "tags": [
+        "CAD / FEA",
+        "Robot Design",
+        "Team Leadership",
+        "Agile / Gantt Planning"
+      ]
     }
   ],
-
   "experience": [
     {
       "title": "Suspension System Engineer",
@@ -172,7 +242,11 @@
       "context": "Astrophysics research published in the Research Notes of the American Astronomical Society.",
       "points": [
         "Analyzed infrared spectroscopy data from the Spitzer Space Telescope in Python (Jupyter)."
-      ]
+      ],
+      "link": {
+        "label": "Read the paper (RNAAS)",
+        "url": "https://doi.org/10.3847/2515-5172/ac236f"
+      }
     }
   ]
 }
